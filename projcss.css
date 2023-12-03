@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+/* Variáveis para CSS. Estão recendo os valores das cores */
+:root{
+    --cor001: #F2915Cff; 
+    --cor002: #237471ff;
+    --cor003: #A5A486ff;
+    --cor004: #004150ff;
+    --cor005: #FC7436ff;
+} 
+
+/* tirando o margin e o padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* cabeçalho (padding preenche os elementos. 
+ex: espaça as palavras que estão dentro de um botão de sua borda )*/
+header{
+    width: 100%;
+    position: fixed;
+    padding: 50px 5%;
+    font-family: 'Acme', sans-serif;
+    font-size: 16px;
+    transition: 1s;
+    top: 0;
+    left: 0;
+}
+
+header.rolagem{
+    background-color: var(--cor004);
+    padding: 10px 5%;
+}
+
+.container-menu{
+    max-width: 1080px;
+    margin: auto;
+}
+
+.alinhar-elementos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 60px;
+}
+
+.logo{
+    width: 60px;
+    height: auto;
+}
+
+/* centralização do texto, cor do h1 e a borda*/
+#h1index{
+    text-align: center;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+    font-size: 4em;
+    text-shadow: -45x 5px 7px #0000007a;
+}
+
+h1 span{
+    color: var(--cor001);
+}
+
+/*centralização do h1 e do blockquote(específico para citação)*/
+h2, blockquote{
+    text-align: center;
+}
+
+blockquote{
+    font-size: large;
+}
+
+p{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* tag(está como classe) de navegação; justify-content: flex-start = navegação(posição) no inicio da pagina*/
+.navg{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 50px 0px 10px ;
+}
+
+
+
+/* (> *) = selecionar todos os elementos filhos diretos (ex: tag a); 
+padding = distancia o conteúdo da borda da caixa 
+text-decoration  = tira o traço do link (a decoração)*/
+.navg > *{
+    margin-left: 270px;
+    margin-right: 60px;
+    text-decoration: none;
+    padding: 15px;
+    color: var(--cor005);
+    transition: all .30s ease-out;
+    border-radius: 7px;
+    font-weight: bolder; /* espessura da letra */
+}
+
+/* :hover = pseudoclasse que aplica a estilização quando o cursor passar em cima do bloco estizado*/
+.navg > *:hover{
+    background-color: var(--cor002);
+    color: var(--cor004);
+    letter-spacing: 3px; /* espaçamento das letras */
+} 
+
+
+/*conteúdo principal 
+height: 63.5vh = altura do conteúdo*/
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+
+    background-image: url("Imagens/fundo2.jpg");
+    background-size: cover; /*n deixar nenhum espaço em branco/dar zoom até preencher todo o espaço*/
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+/* aq ta ajustando a "largura" do texto em geral*/
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.descricao{
+    width: 600px;
+    background-color: var(--cor004);
+    padding: 80px;
+    margin: 0 auto 0 auto;
+    color: var(--cor003);
+    border-radius: 15px;
+}
+
+/* ajuste de minimização*/
+@media (max-width: 790px){
+    .img{
+        display: none;
+    }
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor005);
+    color: white;
+}
+
+/*====================================CSS-FORMULARIOS====================================*/
+.bodies{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: url("Imagens/fundo2.jpg");
+    background-size: cover;
+    background-position: 70%;
+    background-repeat: no-repeat;
+}
+
+.container{
+    width: 70%;
+    height: 90vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
+}
+
+.img-form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.imagem{
+    width: 100%;
+    height: 70vh;
+}
+
+.form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--cor003);
+    font-family: 'Acme', sans-serif;
+    background-color: var(--cor004);
+}
+
+.header-form{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao-cad{
+    margin-top: 30px;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    background-color: var(--cor003);
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px 5px 10px;
+    transition: all .30s ease-out;
+}
+
+.botao-voltar{
+    margin-top: 30px;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    background-color: var(--cor003);
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px 5px 10px;
+    transition: all .30s ease-out;
+}
+
+.botao-voltar:hover{
+    background-color: var(--cor002);
+    color: var(--cor003);
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.botao-cad:hover{
+    background-color: var(--cor002);
+    color: var(--cor003);
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.labels{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px ;
+}
+
+.labels input{
+    border-radius: 7px;
+    padding: 5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .512);
+}
+
+.labels input:focus-visible{
+    outline: 2px solid var(--cor004);
+}
+
+/*botao da senha*/
+div i{
+    position: absolute;
+    top: 50%;
+    right: 320px;
+    transform: translateY(-43px);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-size:cover;
+    color: var(--cor003);
+}
+
+#icon.oculta{
+    background-size:cover;
+}
+
+/*--------------------------------------------*/
+.select{
+    border-radius: 7px;
+    padding: 5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .512);
+}
+
+.select:focus-visible{
+    outline: 2px solid var(--cor004);
+}
+
+/*====================================CSS-INDEX-LEITOR====================================*/
+
+.header-leibiblio {
+    background-color: var(--cor002);
+    padding: 20px 20px 10px 20px;
+
+}
+
+.h1-leibiblio{
+    text-align: center;
+    color: var(--cor004);
+    border:20px inset var(--cor003);
+        font-family: 'Acme', sans-serif;
+}
+
+.main-leibiblio{
+    display: flex;
+    align-items: center;
+    height: 77.9vh;
+    padding: 30px;
+    background-image: url("Imagens/fundocss.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center 50%;
+}
+
+.container-leibiblio{
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
+    background-color: var(--cor004);
+    align-items: center;
+    flex-direction: column;
+}
+
+.h2-leibiblio{
+    margin: 0 auto;
+    color: var(--cor003);
+    font-family: 'Acme', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.botoes-leibiblio{
+    margin-top: 30px;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    background-color: var(--cor003);
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px 5px 10px;
+    transition: all .30s ease-out;
+}
+
+.botoes-leibiblio:hover{
+    background-color: var(--cor002);
+    color: var(--cor004);
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+
+/*====================================CSS-INDEX-BIBLIOTECÁRIO====================================*/
+
+/*LEMBRAR DE AJEITAR HEADER */
+
+.h1-biblio{
+    text-align: center;
+    color: var(--cor003);
+    font-family: 'Acme', sans-serif;
+    font-size: 50px;
+    background-color: var(--cor004);
+}
+
+
+.main-biblio{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+    background-image: url("Imagens/fundo2.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center 50%;
+}
+
+.h2-biblio{
+    margin: 0 auto;
+    color: var(--cor003);
+    font-family: 'Acme', sans-serif;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    border-style: dashed;
+    padding: 9px;
+}
+
+
+.botoes-biblio{
+    margin-top: 20px;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    background-color: var(--cor003);
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px 5px 10px;
+    transition: all .30s ease-out;
+}
+
+.botoes-biblio:hover{
+    background-color: var(--cor002);
+    color: var(--cor003);
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+/*====================================CSS-MENSAGENS====================================*/
+.container-msg{
+    width: 40%;
+    height: 60vh;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
+    background-color: var(--cor003);
+    align-items: center;
+    flex-direction: column;
+}
+
+.h1-msg{
+    margin-top: 100px;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+}
+
+/*====================================CSS-TABELAS====================================*/
+
+.container-tabela{
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
+    background-color: var(--cor003);
+    align-items: center;
+    flex-direction: column;
+}
+
+table, th,td{
+    color: var(--cor004);
+    margin-top: 20px;
+    border: 2px solid var(--cor004);
+    border-collapse: collapse;
+    background: var(--cor002);
+    padding: 10px;
+}
+
+th{
+    font-family: 'Acme', sans-serif;
+}
+
+.h1listas{
+    margin-top: 60px;
+    color: var(--cor004);
+    font-family: 'Acme', sans-serif;
+}
+
+/* Cores v1                     
+--cor001: #BF8C2C;
+--cor002: #F28705;
+--cor003: #BF5B04;
+--cor004: #591A03;
+--cor005: #260202;
+*/
+
+/* Cores v2
+--atomic-tangerine: #F2915Cff;
+--myrtle-green: #237471ff;
+--sage: #A5A486ff;
+--midnight-green: #004150ff;
+--orange-crayola: #FC7436ff;
+*/
+
+/*
+flexbox lembrando propriedades
+
+display: flex: identificar que a tag vai ser o container de flexbox
+flex-direction: identificar qual vai ser o eixo principal (column ou row)
+justify-content: alinhar os elementos no eixo principal
+align-items: alinhar os elementos no eixo perpendicular
+flex-wrap: para decidir se os elementos irão para a linha de baixo quando chegarem no final ou se ficarão espremidos
+
+aling-content: para quando existe o flex-wrap e queremos alinhar as linhas no nosso eixo perpendicular
+
+gap: espaço entre os elementos (px) (pode colocar o row e o column já no gap) ex: 10px 30px (respectivamente)
+row-gap: distância entre linhas 
+column-gap: ditância entre colunas
+*/
+

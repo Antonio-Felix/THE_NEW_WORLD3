@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Acme', sans-serif;
+    box-sizing: border-box;
+}
+
+/* altura do html p ser possivel ter a barra de rolagem 
+200vh = 2 vezes o tamanho da tela */
+html{
+    height: 200vh;
+}
+
+.container{
+    max-width: 1080px;
+    margin: auto;
+}
+
+.alinhar-elementos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.logo{
+    width: 50px;
+    height: auto;
+    color: #fff;
+}
+
+
+#header{
+    width: 100%;
+    padding: 60px 5%;
+    position: fixed; /*deixa o header fixo no topo*/
+    top: 0; /*torna o header transparente*/
+    left: 0;
+    transition: 1s;
+}
+
+/*chamando a classe do javascript*/
+header.rolagem{
+    background-color: aquamarine;
+    padding: 10px 5%;
+}
+
+/*tirar as bolinhas da lista*/
+header ul{
+    list-style-type: none;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 50px;
+}
+
+/*links*/
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.imagem-fundo{
+    height: 100vh;
+    background-image: url(IMG/fundo2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#h1menu{
+    font-size: 4em;
+    color: aqua;
+}
+
+h1 span{
+    color: #004150ff;
+}
+
+/*
+estilizar botão (cursor: pointer;)
+colocar os links com a transição original
+*/
+
+/*
+tentar resolver o problema do header do javascript
+*/
