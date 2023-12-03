@@ -1,10 +1,8 @@
 <?php
 include '../classes/funcionario.php';
-
+include('../../muido/conexao.php');
 
     $funcionario = new funcionario($_POST['cpffun'], $_POST['nome'],  $_POST['email'], $_POST['fone'], $_POST['senha']); 
-
-    $con = mysqli_connect("localhost", "root", "", "newworld");
 
     $query = "insert into funcionario values(" .$funcionario -> getCpffun(). ", '" .$funcionario -> getNome(). "' , '" .$funcionario -> getEmail(). "', " .$funcionario -> getFone(). ", " .$funcionario -> getSenha().")";
 
