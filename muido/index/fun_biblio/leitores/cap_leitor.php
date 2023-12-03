@@ -1,11 +1,9 @@
 <?php
 include '../../../classes/leitor.php';
 include ('../../captura/protect.php');
-
+include '../../../conexao.php';
 
     $leitor = new leitor($_POST['cpfleitor'], $_POST['nome'],  $_POST['email'], $_POST['fone'], $_POST['senha']); 
-
-    $con = mysqli_connect("localhost", "root", "", "newworld");
 
     $query = "insert into leitor values(" .$leitor -> getCpfleitor(). ", '" .$leitor -> getNome(). "' , '" .$leitor -> getEmail(). "', " .$leitor -> getFone(). ", " .$leitor -> getSenha().")";
 
