@@ -1,8 +1,8 @@
 <?php
 
     session_start(); 
-    
-    include '../../../conexao.php';
+
+    include('../../../conexao.php');
 
     include '../../../classes/livro.php'; 
 
@@ -26,10 +26,10 @@
 
     // INICIALIZANDO AS VARÍAVEIS DE CONTROLE: 
 
-    $mensagem = ' '; 
     $exibir = false;
     $_SESSION['exibir'] = $exibir; 
-
+    $_SESSION['mensagem'] = ' ';
+    
    // (1° VÁLIDAÇÃO - CODIGO) conferindo de o codigo do livro existe (SE O CÓDIGO ESTÁ CORRETO)
 
      $query2 = "SELECT codlivro FROM livro WHERE codlivro = '$codlivro'";
@@ -52,14 +52,35 @@
             $result4 = mysqli_query($con, $query4);
             if ($result4->num_rows > 0){
                 
-                // FAZENDO O UPDATE DA SITUACAO DO LIVRO 
+                // FAZENDO O UPDATE DA SITUACAO DO LIVRO NO POO
 
+                /*$query5 = "call set_emprestar($codsitua, $codlivro)";
+                if ($livro -> getCodlivro() == $codlivro){
+                    $livro -> setSituacao($codsitua);
+                }*/
+                
+
+                // FAZENDO UPDATE DA SITUACAO NO BANCO DE DADOS 
+
+                $query5 = "call set_emprestar($codsitua, $codlivro)";
+                $result5 = mysqli_query($con, $query5);
+                
                 // ARMAZENANDO O EMPRÉSTIMO NO BANCO DE DADOS 
 
+                $query = "INSERT into emprestimo values($codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao')";
+                $result  = mysqli_query($con, $query);
 
-              // OBS: CONCERTAR A MENSAGEM DE SUCESSO!!!!  
-                $_SESSION['mensagem'] =  "livro cadastrado!";
-                $exibir = true;  
+                if($result){
+                  // OBS: CONCERTAR A MENSAGEM DE SUCESSO!!!!  
+                        $_SESSION['mensagem'] =  "livro cadastrado!";
+                        $exibir = true;  
+                }
+                else{
+                    // COLOCAR O ALERT DE ANTÔNIO
+                    $_SESSION['mensagem'] =  "algo deu errado!";
+                }
+
+             
             }
             else {
                 $exibir = true;
@@ -81,29 +102,6 @@
     if ($exibir){
         header("location:cad_emp.php");
     }
-
-   // function emprestimo($codsit
-     /*função emprestimo
-    public function emprestimo($cod){
-        if($cod == 1){
-            $this->setSituacao($cod); 
-        }
-        else{
-           $ctrl = false; 
-        }
-    }
-*/
-
-/* /*função emprestimo
-    public function emprestimo($cod){
-        if($cod == 1){
-            $this->setSituacao($cod); 
-        }
-        else{
-           $ctrl = false; 
-        }
-    } */
-
 
 ?>
  

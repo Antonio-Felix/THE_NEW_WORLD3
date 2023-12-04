@@ -11,8 +11,9 @@
 
     <style>
         .mensagem-erro {
-            color: red;
+            color: white;
         }
+    
     </style>
 
 </head>
@@ -39,13 +40,17 @@
                         </div>
 
                         <!-- Exibir mensagem de erro se existir -->
-                        
-                <div class="mensagem-erro">
-                   <?php
-                   
-                    echo $_SESSION['mensagem']; 
-                    echo '</br>';
 
+                    <?php ?>
+                <div class="mensagem-erro">
+
+                   <?php
+                   if (isset($_SESSION["mensagem"])) {
+        
+                    echo   $_SESSION['mensagem']; 
+                    echo '</br>';
+                    $_SESSION['mensagem'] = ' ';
+                   }
                    ?>
                    </div>
 
@@ -73,14 +78,6 @@
                 </div>
         </div>
 </body>
-                       <!--  
 
-                            <div class="labels">
-                                <label for="cpffun"> <strong> CPF do Funcionario:</strong></label>
-                                <input type="text" name="cpffun" placeholder="000.000.000-00">
-                            </div>
-
-                           
---> 
 </html>
 

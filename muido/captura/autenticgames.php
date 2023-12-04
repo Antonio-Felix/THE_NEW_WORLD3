@@ -34,8 +34,13 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
             $usuario = $sql_query->fetch_assoc();
             $_SESSION['cpffun'] = $usuario['cpffun'];
             $_SESSION['nome'] = $usuario['nome'];
+
+            // SESSION PARA OS TRATAMENTOS DE ERRO DO EMPRESTIMO
+            $_SESSION ['mensagem'] = ' '; 
+            
             header("Location:../index/fun_biblio/index_biblio.php");
             exit();
+
         } 
         else {
             echo "Falha ao logar! E-mail ou senha incorretos";
