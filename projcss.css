@@ -463,7 +463,10 @@ th{
     color: var(--cor004);
     font-family: 'Acme', sans-serif;
 }
-
+/*====================================CSS-MENSAGEM-DE-ERR0====================================*/
+.mensagem-erro {
+    color: white;
+}
 /* Cores v1                     
 --cor001: #BF8C2C;
 --cor002: #F28705;

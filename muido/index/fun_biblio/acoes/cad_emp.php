@@ -20,9 +20,6 @@
 
 <body class="bodies"> 
 
-<?php
-        session_start();
-?>
         <div class="container">
             <div class="img-form">
                 <img class="imagem" src="../../../../Imagens/para-emprestimo.png" alt="">
@@ -41,10 +38,10 @@
 
                         <!-- Exibir mensagem de erro se existir -->
 
-                    <?php ?>
                 <div class="mensagem-erro">
 
                    <?php
+                   session_start();
                    if (isset($_SESSION["mensagem"])) {
         
                     echo   $_SESSION['mensagem']; 
