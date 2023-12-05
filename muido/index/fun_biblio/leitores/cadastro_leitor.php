@@ -32,29 +32,29 @@
 
                     <div class="labels">
                         <label for="nome"> <strong> Nome: </strong> </label>
-                        <input type="text" name="nome" placeholder = "Digite seu nome">
+                        <input type="text" name="nome" placeholder = "Digite seu nome" required>
                     </div>
                     
                 <div class="total-input">
                     <div class="labels">
                         <label for="cpfleitor"> <strong>CPF:</strong> </label>
-                        <input type="number" name="cpfleitor" id="cpffun" autofocus placeholder="00000000000">
+                        <input type="number" name="cpfleitor" id="cpffun" autofocus placeholder="00000000000" required>
                     </div>
 
                     <div class="labels">
                         <label for="senha"> <strong>Senha:</strong> </label>
-                        <input type="password" name="senha" id="senha" placeholder="********">
+                        <input type="password" name="senha" id="senha" placeholder="********" required>
                         <i class="bi bi-eye" onclick="mostrarSenha()" id="btnSenha"></i>
                     </div>
 
                     <div class="labels">
                         <label for="email"> <strong> Email: </strong> </label>
-                        <input type="email" name="email" placeholder = "nome@gmail.com">
+                        <input type="email" name="email" placeholder = "nome@gmail.com" required>
                     </div>
 
                     <div class="labels">
                         <label for="fone"> <strong> Telefone: </strong> </label>
-                        <input type="number" name="fone" placeholder = "00000000000">
+                        <input type="number" name="fone" placeholder = "00000000000" required>
                     </div>
 
         

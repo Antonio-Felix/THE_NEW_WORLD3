@@ -1,6 +1,6 @@
 <?php
-include '../classes/funcionario.php';
-include('../../muido/conexao.php');
+include '../../../classes/funcionario.php';
+include('../../../conexao.php');
 
     $funcionario = new funcionario($_POST['cpffun'], $_POST['nome'],  $_POST['email'], $_POST['fone'], $_POST['senha']); 
 
@@ -11,12 +11,11 @@ include('../../muido/conexao.php');
     if($result){
         //colocar um notificador 
         echo "deu certo";
-        header("location:../form/login.php");
+        header("location:cadastro_funcionario.php");
     }
     else{
         //colocar um notificador
         echo "deu errado"; 
-        header("erro_login.html");
     }
   
 ?>
