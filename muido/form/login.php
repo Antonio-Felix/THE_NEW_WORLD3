@@ -25,15 +25,37 @@
                     </div>
                 </div>
                 <div class="total-input">
-                    <div class="labels">
-                        <label for="cpf"><strong> CPF: </strong> </label>
-                        <input type="text" id="cpf" name="cpf" placeholder="Insira seu cpf" autofocus>
-                    </div>
+                    <?php
+                    session_start();
+                    echo '<div class="labels">';
+                    echo'<label for="cpf"><strong> CPF: </strong> </label>';
+                    echo '<input type="text" id="cpf" name="cpf" placeholder="Insira seu cpf" autofocus>';
+                    echo '</div>';
+                   if (isset($_SESSION["mensagem3"])) {
+                    echo   $_SESSION['mensagem3']; 
+                    echo '</br>';
+                    $_SESSION['mensagem3'] = ' ';
+                   }
+                   ?>
                     <div class="labels">
                         <label for="senha"><strong>Senha:</strong> </label>
                         <input type="text" id="password" name="senha" placeholder="Insira sua senha " autofocus>
                     </div>
-        
+                    <div>
+                    <?php
+                   if (isset($_SESSION["mensagem4"])) {
+                    echo   $_SESSION['mensagem4']; 
+                    echo '</br>';
+                    $_SESSION['mensagem4'] = ' ';
+                   }
+                   if(isset($_SESSION["mensagem6"])){
+                    echo   $_SESSION['mensagem6']; 
+                    echo '</br>';
+                    $_SESSION['mensagem6'] = ' ';
+                   }
+                   
+                   ?>
+                    </div>
                     <br>
 
                     <input class="botao-cad" type="submit" value="Logar">
