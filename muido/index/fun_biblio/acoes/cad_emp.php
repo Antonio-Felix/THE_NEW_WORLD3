@@ -54,7 +54,7 @@
                        <div class="total-input">
                              <div class="labels">
                                 <label for="cpfleitor"> <strong> CPF do Leitor:</strong></label>
-                                <input type="text" name="cpfleitor" placeholder="000.000.000-00">
+                                <input type="text" name="cpfleitor" placeholder="000.000.000-00" required>
                             </div>
   
                             <div class="labels">
@@ -63,7 +63,7 @@
                             </div>
                             <div class="labels">
                                 <label for="codlivro" ><strong>Código do livro:</strong></label>
-                                <input type="number" name="codlivro">
+                                <input type="number" name="codlivro" required>
                             </div>
 
                             </div>
