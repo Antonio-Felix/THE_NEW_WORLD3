@@ -26,10 +26,21 @@
                         <h1> Cadastro de Funcionário </h1>
                     </div>
                 </div>
+                 <!-- Exibir mensagem de erro se existir -->
 
+                 <div class="mensagem-erro">
+
+                    <?php
+                    session_start();
+                    if (isset($_SESSION["mensagem8"])) {
+                    echo   $_SESSION['mensagem8']; 
+                    $_SESSION['mensagem8'] = ' ';
+                    }
+                    ?>
+                </div>
                     <div class="labels">
                         <label for="nome"> <strong> Nome: </strong> </label>
-                        <input type="text" name="nome" placeholder = "Digite seu nome">
+                        <input type="text" name="nome" placeholder = "Digite seu nome" required>
                     </div>
                     
                 <div class="total-input">

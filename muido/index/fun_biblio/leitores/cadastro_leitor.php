@@ -1,5 +1,5 @@
 <?php
-    include ('../../captura/protect.php');
+    include ('../../../captura/protect.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,6 +28,19 @@
                     <div class="titulo-form">
                         <h1> Cadastro de Leitor </h1>
                     </div>
+                </div>
+
+                <div class="mensagem-erro">
+
+                    <?php
+                    //session_start();
+
+                    if (isset($_SESSION["mensagem7"])) {
+                    echo   $_SESSION['mensagem7']; 
+                    $_SESSION['mensagem7'] = ' ';
+                    }
+            
+                    ?>
                 </div>
 
                     <div class="labels">

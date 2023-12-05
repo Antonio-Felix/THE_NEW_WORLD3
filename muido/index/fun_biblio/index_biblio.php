@@ -18,7 +18,7 @@
     <a href="livro/op_livro.html"> LIVRO</a> <br>
     <a href="leitores/op_leitores.html">LEITORES</a> <br>
     <a href="acoes/op_acoes.html"> AÇÕES</a> <br>
-    <a href="funcionario/cadastro_funcionario.php"> FUNCIONÁRIOS</a>
+    <a href="funcionario/op_fun.html"> FUNCIONÁRIOS</a>
 
 
 </body>
