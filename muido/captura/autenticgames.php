@@ -47,6 +47,7 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
             // SESSION PARA OS TRATAMENTOS DE ERRO DO EMPRESTIMO
             $_SESSION ['mensagem'] = ' '; // EMPRESTIMO
             $_SESSION ['mensagem2'] = ' '; // DEVOLUCAO
+            $_SESSION['mensagem5'] = ' '; // TRATAMENTO DE ERRO DO LEITOR
 
             header("Location:../index/fun_biblio/index_biblio.php");
             exit();

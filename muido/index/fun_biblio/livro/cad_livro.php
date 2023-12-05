@@ -1,5 +1,7 @@
 <?php
     include ('../../../captura/protect.php');
+    include('../../../conexao.php');
+    //session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,6 +30,20 @@
                         </div>
                     </div>
 
+                    <div class="mensagem-erro">
+
+                        <?php
+
+                        if (isset($_SESSION["mensagem5"])) {
+
+                        echo   $_SESSION['mensagem5']; 
+                        echo '</br>';
+                        $_SESSION['mensagem5'] = ' ';
+
+                        }
+                        ?>
+                        </div>
+
                         <div class="total-input">
                             <div class="labels">
                                 <label for="codlivro"><strong>Código do livro:</strong> </label>
@@ -52,8 +68,8 @@
                            <label for="situacao"> <strong>Situação:</strong> </label><br>
                         <select class="select"name="situacao" id="situacao">
                         <option selected disabled value=""> <strong>Selecione</strong></option>
+
                         <?php
-                        $con = mysqli_connect("localhost", "root", "", "newworld");
                         $query = "select * from situacao";
                         $result = mysqli_query($con, $query);
                         while($linha = mysqli_fetch_array($result)){
