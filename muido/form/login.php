@@ -6,65 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <link rel="shortcut icon" href="../../Imagens/world-book-day.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../projcss.css">
 </head>
 
 <body class="bodies">
 
+    <header class="header-login">
+        <div class="container-header-login"> 
+
+            <div class="alinhar-header-login"> 
+
+                <nav class="navg-login">      
+                    <a class="link-linha" href="../../index.html"> HOME </a>
+                    <a class="link-linha" href="../../index.html"> VOLTAR </a>
+                </nav>
+
+            </div>
+        </div>            
+    </header>
+
     <div class="container">
-        <div class="img-form">
-            <img class="imagem" src="../../Imagens/cadastro.png" alt="">
-        </div>
-        <div class="form">
-            <form action="../captura/autenticgames.php" method = "post">
-        
-                <div class="header-form">
-                    <div class="titulo-form">
-                        <h1> Realizar Login </h1>
-                    </div>
+
+        <form action="../captura/autenticgames.php" method = "post">
+
+            <h1 class="h1-form">Login</h1>
+
+                <div class="logo-login">
+                    <img class="logo" src="../../Imagens/world-book-day (1).png" alt="">
                 </div>
-                <div class="total-input">
-                    <?php
+
+                <?php
                     session_start();
-                    echo '<div class="labels">';
-                    echo'<label for="cpf"><strong> CPF: </strong> </label>';
-                    echo '<input type="text" id="cpf" name="cpf" placeholder="Insira seu cpf" autofocus>';
-                    echo '</div>';
                    if (isset($_SESSION["mensagem3"])) {
                     echo   $_SESSION['mensagem3']; 
-                    echo '</br>';
                     $_SESSION['mensagem3'] = ' ';
                    }
-                   ?>
-                    <div class="labels">
-                        <label for="senha"><strong>Senha:</strong> </label>
-                        <input type="text" id="password" name="senha" placeholder="Insira sua senha " autofocus>
-                    </div>
-                    <div>
-                        
-                    <?php
+
                    if (isset($_SESSION["mensagem4"])) {
                     echo   $_SESSION['mensagem4']; 
-                    echo '</br>';
                     $_SESSION['mensagem4'] = ' ';
                    }
                    if(isset($_SESSION["mensagem6"])){
                     echo   $_SESSION['mensagem6']; 
-                    echo '</br>';
                     $_SESSION['mensagem6'] = ' ';
                    }
-                   
                    ?>
-                    </div>
-                    <br>
 
-                    <input class="botao-cad" type="submit" value="Logar">
-                    
+                <div class="caixa-input">
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" autofocus required>
+                    <i class='bx bxs-user-circle'></i>
                 </div>
+
+                <div class="caixa-input">
+                    <input type="password" id="password" name="senha" placeholder="Insira sua senha " autofocus>
+                    <i class="bi bi-eye" onclick="mostrarSenha()" id="btnSenha"></i>
+                </div>
+
+                <div class="div-btn-login">
+                    <button type="submit" class="botao-login"> Login</button>
+                </div> 
+                
+
             </form>
-            <a href="../../index.html"><button class="botao-voltar"> Voltar </button></a>
-        </div>
     </div>
+
+    <script src="senha.js"></script>
 </body>
 </html>

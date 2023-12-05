@@ -53,6 +53,38 @@ header.rolagem{
     height: auto;
 }
 
+/* tag(está como classe) de navegação; justify-content: flex-start = navegação(posição) no inicio da pagina*/
+.navg{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 50px 0px 10px ;
+}
+
+/* (> *) = selecionar todos os elementos filhos diretos (ex: tag a); 
+padding = distancia o conteúdo da borda da caixa 
+text-decoration  = tira o traço do link (a decoração)*/
+.navg > *{
+    margin-left: 270px;
+    margin-right: 60px;
+    text-decoration: none;
+    padding: 15px;
+    background-color: var(--cor002);
+    color: #fff;
+    transition: all .30s ease-out;
+    border-radius: 20px;
+    font-weight: bolder; /* espessura da letra */
+
+}
+
+/* :hover = pseudoclasse que aplica a estilização quando o cursor passar em cima do bloco estizado*/
+.navg > *:hover{
+    box-shadow: 1px 1px 6px #ffffffb6;
+    background-color: var(--cor002);
+    color: #fff;
+    transition: .3s ease 0s, left .3s ease 0s;
+} 
+
 /* centralização do texto, cor do h1 e a borda*/
 #h1index{
     text-align: center;
@@ -80,38 +112,6 @@ p{
     margin-top: 10px;
     font-size: 20px;
 }
-
-/* tag(está como classe) de navegação; justify-content: flex-start = navegação(posição) no inicio da pagina*/
-.navg{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px 50px 0px 10px ;
-}
-
-
-
-/* (> *) = selecionar todos os elementos filhos diretos (ex: tag a); 
-padding = distancia o conteúdo da borda da caixa 
-text-decoration  = tira o traço do link (a decoração)*/
-.navg > *{
-    margin-left: 270px;
-    margin-right: 60px;
-    text-decoration: none;
-    padding: 15px;
-    color: var(--cor005);
-    transition: all .30s ease-out;
-    border-radius: 7px;
-    font-weight: bolder; /* espessura da letra */
-}
-
-/* :hover = pseudoclasse que aplica a estilização quando o cursor passar em cima do bloco estizado*/
-.navg > *:hover{
-    background-color: var(--cor002);
-    color: var(--cor004);
-    letter-spacing: 3px; /* espaçamento das letras */
-} 
-
 
 /*conteúdo principal 
 height: 63.5vh = altura do conteúdo*/
@@ -160,11 +160,68 @@ footer{
 }
 
 /*====================================CSS-FORMULARIOS====================================*/
+
+.header-login{
+    width: 100%;
+    position: fixed;
+    padding: 50px 5%;
+    font-family: 'Acme', sans-serif;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+}
+
+.header-login{
+    background-color: var(--cor004);
+    padding: 15px 5%;
+}
+
+.container-header-login{
+    max-width: 1080px;
+    margin: 15px;
+}
+
+.alinhar-header-login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 60px;
+}
+
+.navg-login > *{
+    margin-left: 20px;
+    margin-right: 70px;
+    text-decoration: none;
+    padding: 15px;
+    color: var(--cor005);
+    transition: all .30s ease-out;
+    border-radius: 7px;
+    font-weight: bolder; /* espessura da letra */
+    position: relative;
+}
+
+.link-linha::after{
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 2px;
+    position: absolute; 
+    background: var(--cor005);
+    width: 0%;
+    transition: .3s ease 0s, left .3s ease 0s;
+}
+
+.link-linha:hover::after{
+    width: 100%;
+}
+
 .bodies{
     width: 100%;
     height: 100vh;
     align-items: center;
     display: flex;
+    font-family: 'Acme', sans-serif;
     justify-content: center;
     background-image: url("Imagens/fundo2.jpg");
     background-size: cover;
@@ -173,95 +230,95 @@ footer{
 }
 
 .container{
-    width: 70%;
-    height: 90vh;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
+    width: 500px;
+    background: rgba(0, 65, 80, 0.479);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
 }
 
-.img-form{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+.container .h1-form{
+    font-size: 36px;
+    text-align: center;
 }
 
-.imagem{
+.container .caixa-input{
+    position: relative;
+    width: 420px;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.caixa-input input{
     width: 100%;
-    height: 70vh;
-}
-
-.form{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: var(--cor003);
-    font-family: 'Acme', sans-serif;
-    background-color: var(--cor004);
-}
-
-.header-form{
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.botao-cad{
-    margin-top: 30px;
-    color: var(--cor004);
-    font-family: 'Acme', sans-serif;
-    font-size: 15px;
-    background-color: var(--cor003);
+    height: 100%;
     border: none;
-    border-radius: 7px;
-    padding: 5px 10px 5px 10px;
-    transition: all .30s ease-out;
-}
-
-.botao-voltar{
-    margin-top: 30px;
-    color: var(--cor004);
+    outline: none;
     font-family: 'Acme', sans-serif;
-    font-size: 15px;
-    background-color: var(--cor003);
-    border: none;
-    border-radius: 7px;
-    padding: 5px 10px 5px 10px;
-    transition: all .30s ease-out;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
 }
 
-.botao-voltar:hover{
-    background-color: var(--cor002);
-    color: var(--cor003);
-    letter-spacing: 3px;
+.caixa-input input::placeholder{
+    color: #fff;
+}
+
+.caixa-input i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
     cursor: pointer;
+    color: #fff;
 }
 
-.botao-cad:hover{
-    background-color: var(--cor002);
-    color: var(--cor003);
-    letter-spacing: 3px;
-    cursor: pointer;
+.container .div-btn-login{
+    text-align: center;
 }
 
-.labels{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px ;
-}
-
-.labels input{
-    border-radius: 7px;
-    padding: 5px;
+.container .botao-login{
+    width: 70%;
+    height: 45px;
+    background: #004150ff;
     border: none;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .512);
+    font-family: 'Acme', sans-serif;
+    border-radius: 40px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;  
+    transition: .3s ease 0s, left .3s ease 0s;
+}
+
+.container .botao-login:hover{
+    box-shadow: 1px 3px 10px #ffffffb6;
+    letter-spacing: 1px;
+    transition: .3s ease 0s, left .3s ease 0s;
 }
 
 .labels input:focus-visible{
     outline: 2px solid var(--cor004);
+}
+
+.logo-login{
+    width: 50px;
+    height: 50px;
+    transform: translate(600%, -90%);
+}
+
+.logo-login .logo{
+    width: 60px;
+    height: auto;
 }
 
 /*botao da senha*/
@@ -270,16 +327,13 @@ div i{
     top: 50%;
     right: 320px;
     transform: translateY(-43px);
-    height: 30px;
-    width: 30px;
+    height: 22px;
+    width: 20px;
     cursor: pointer;
     background-size:cover;
     color: var(--cor003);
 }
 
-#icon.oculta{
-    background-size:cover;
-}
 
 /*--------------------------------------------*/
 .select{
@@ -468,35 +522,4 @@ th{
     color: white;
 }
 
-/* Cores v1                     
---cor001: #BF8C2C;
---cor002: #F28705;
---cor003: #BF5B04;
---cor004: #591A03;
---cor005: #260202;
-*/
-
-/* Cores v2
---atomic-tangerine: #F2915Cff;
---myrtle-green: #237471ff;
---sage: #A5A486ff;
---midnight-green: #004150ff;
---orange-crayola: #FC7436ff;
-*/
-
-/*
-flexbox lembrando propriedades
-
-display: flex: identificar que a tag vai ser o container de flexbox
-flex-direction: identificar qual vai ser o eixo principal (column ou row)
-justify-content: alinhar os elementos no eixo principal
-align-items: alinhar os elementos no eixo perpendicular
-flex-wrap: para decidir se os elementos irão para a linha de baixo quando chegarem no final ou se ficarão espremidos
-
-aling-content: para quando existe o flex-wrap e queremos alinhar as linhas no nosso eixo perpendicular
-
-gap: espaço entre os elementos (px) (pode colocar o row e o column já no gap) ex: 10px 30px (respectivamente)
-row-gap: distância entre linhas 
-column-gap: ditância entre colunas
-*/
 
