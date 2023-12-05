@@ -17,6 +17,7 @@
     $datadevolucao = date('Y-m-d', strtotime($dataegresso . ' + 30 days'));
 
     $codsitua = 2;
+    $acao = 1;
 
     // ARMAZENANDO OS VALORES DO POST NA SESSION 
     $_SESSION['cpfleitor'] = $cpfleitor;
@@ -51,28 +52,26 @@
             $query4 = "SELECT cpfleitor from leitor where cpfleitor = '$cpfleitor'";
             $result4 = mysqli_query($con, $query4);
             if ($result4->num_rows > 0){
-                
-                // FAZENDO O UPDATE DA SITUACAO DO LIVRO NO POO
-
-                /*$query5 = "call set_emprestar($codsitua, $codlivro)";
-                if ($livro -> getCodlivro() == $codlivro){
-                    $livro -> setSituacao($codsitua);
-                }*/
-                
 
                 // FAZENDO UPDATE DA SITUACAO NO BANCO DE DADOS 
 
-                $query5 = "call set_emprestar($codsitua, $codlivro)";
+                $query5 = "call set_situa($codsitua, $codlivro)";
                 $result5 = mysqli_query($con, $query5);
+
                 
                 // ARMAZENANDO O EMPRÉSTIMO NO BANCO DE DADOS 
 
                 $query = "INSERT into emprestimo values($codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao')";
                 $result  = mysqli_query($con, $query);
 
-                if($result){
+                // INSERTANDO OS VALORES DA TABELA DE RELATÓRIO
+
+                $query6 = "call add_relatorio ($acao, $codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao')";
+                $result6 = mysqli_query($con, $query6);
+
+                if($result and $result5 and $result6){
                   // OBS: CONCERTAR A MENSAGEM DE SUCESSO!!!!  
-                        $_SESSION['mensagem'] =  "livro cadastrado!";
+                        $_SESSION['mensagem'] =  "Emprestimo realizado!";
                         $exibir = true;  
                 }
                 else{
@@ -80,7 +79,6 @@
                     $_SESSION['mensagem'] =  "algo deu errado!";
                 }
 
-             
             }
             else {
                 $exibir = true;

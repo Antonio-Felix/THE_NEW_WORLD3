@@ -9,6 +9,12 @@
     <link rel="shortcut icon" href="../../../../Imagens/world-book-day.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../../../projcss.css"> 
 
+    <style>
+        .mensagem-erro {
+            color: white;
+        }
+    
+    </style>
 
 </head>
 
@@ -22,28 +28,31 @@
             <legend></legend>
                 <div class="form">
 
-                    <form action="cap_emp.php" method="post">
+                    <form action="cap_devol.php" method="post">
 
                         <div class="header-form">
                             <div class="titulo-form">
-                                <h1>Realizar Emprestimo</h1>
+                                <h1>Realizar Devolução</h1>
                             </div>
                         </div>
 
                         <!-- Exibir mensagem de erro se existir -->
 
-                    <div class="mensagem-erro">
 
-                    <?php
+                <div class="mensagem-erro">
+
+                   <?php
+
                     session_start();
-                    if (isset($_SESSION["mensagem"])) {
-            
-                        echo   $_SESSION['mensagem']; 
-                        echo '</br>';
-                        $_SESSION['mensagem'] = ' ';
-                    }
-                    ?>
-                    </div>
+                    
+                   if (isset($_SESSION["mensagem2"])) {
+        
+                    echo   $_SESSION['mensagem2']; 
+                    echo '</br>';
+                    $_SESSION['mensagem2'] = ' ';
+                   }
+                   ?>
+                   </div>
 
                        <div class="total-input">
                              <div class="labels">
@@ -52,8 +61,8 @@
                             </div>
   
                             <div class="labels">
-                                <label for="dataegresso"><strong> Data de egresso:</strong></label>
-                                <input type="date" name="dataegresso" autofocus required>
+                                <label for="datadevolucao"><strong> Data de devolucao:</strong></label>
+                                <input type="date" name="datadevolucao" autofocus required>
                             </div>
                             <div class="labels">
                                 <label for="codlivro" ><strong>Código do livro:</strong></label>

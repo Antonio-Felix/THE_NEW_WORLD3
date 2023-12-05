@@ -17,7 +17,7 @@
 
     <a href="livro/op_livro.html"> LIVRO</a> <br>
     <a href="leitores/op_leitores.html">LEITORES</a> <br>
-    <a href="ações/op_acoes.html"> AÇÕES</a>
+    <a href="acoes/op_acoes.html"> AÇÕES</a>
 
 
 </body>
