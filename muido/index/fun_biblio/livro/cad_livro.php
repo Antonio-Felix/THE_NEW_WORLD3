@@ -24,7 +24,7 @@
 
                 <nav class="navg-login">      
                     <a class="link-linha" href="../../../../index.html"> HOME </a>
-                    <a class="link-linha" href="../../../../index.html"> VOLTAR </a>
+                    <a class="link-linha" href="../index_biblio.php"> VOLTAR </a>
                 </nav>
 
             </div>
