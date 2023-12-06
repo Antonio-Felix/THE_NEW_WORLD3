@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Cadastro de Usuário</title>
+    <title> THE NEW WORLD</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
     <link rel="shortcut icon" href="../../Imagens/world-book-day.png" type="image/x-icon">
@@ -16,18 +16,28 @@
 
 <body class="bodies">
 
-    <div class="container">
-        <div class="img-form">
-            <img class="imagem" src="../../Imagens/form.png" alt="">
-        </div>
+<header class="header-login">
+        <div class="container-header-login"> 
 
-        <div class="form">
+            <div class="alinhar-header-login"> 
+
+                <nav class="navg-login">      
+                    <a class="link-linha" href="../../../../index.html"> HOME </a>
+                    <a class="link-linha" href="../../../../index.html"> VOLTAR </a>
+                </nav>
+
+            </div>
+        </div>            
+</header>
+
+    <div class="container">
+
             <form action="cap_leitor.php" method = "post">
 
-                <div class="header-form">
-                    <div class="titulo-form">
-                        <h1> Cadastro de Leitor </h1>
-                    </div>
+                <h1 class="h1-form" > Cadastrar Leitor </h1>
+
+                <div class="logo-login">
+                    <img class="logo" src="../../../../Imagens/world-book-day (1).png" alt="">
                 </div>
 
                 <div class="mensagem-erro">
@@ -41,50 +51,40 @@
                     }
             
                     ?>
+
                 </div>
 
-                    <div class="labels">
-                        <label for="nome"> <strong> Nome: </strong> </label>
-                        <input type="text" name="nome" placeholder = "Digite seu nome" required>
+                    <div class="caixa-input">
+                        <input type="text" name="nome" placeholder = "Nome" autofocus required>
                     </div>
                     
-                <div class="total-input">
-                    <div class="labels">
-                        <label for="cpfleitor"> <strong>CPF:</strong> </label>
-                        <input type="number" name="cpfleitor" id="cpffun" autofocus placeholder="00000000000" required>
+
+                    <div class="caixa-input">
+                        <input type="number" name="cpfleitor" id="cpffun" placeholder="CPF" required>
                     </div>
 
-                    <div class="labels">
-                        <label for="senha"> <strong>Senha:</strong> </label>
-                        <input type="password" name="senha" id="senha" placeholder="********" required>
+                    <div class="caixa-input">
+                        <input type="password" name="senha" id="password" placeholder="Senha" required>
                         <i class="bi bi-eye" onclick="mostrarSenha()" id="btnSenha"></i>
                     </div>
 
-                    <div class="labels">
-                        <label for="email"> <strong> Email: </strong> </label>
-                        <input type="email" name="email" placeholder = "nome@gmail.com" required>
+                    <div class="caixa-input">
+                        <input type="email" name="email" placeholder = "Email" required>
                     </div>
 
-                    <div class="labels">
-                        <label for="fone"> <strong> Telefone: </strong> </label>
-                        <input type="number" name="fone" placeholder = "00000000000" required>
+                    <div class="caixa-input">
+                        <input type="number" name="fone" placeholder = "Telefone" required>
                     </div>
+    
 
-        
-                    
-                    <div class="labels">
-                       
-                       
-                    </div>
-
-                    <input class="botao-cad" type="submit" value="Cadastrar">
-                </div>
+                    <div class="div-btn-login">
+                        <button type="submit" class="botao-login"> Cadastrar </button>
+                    </div> 
+            
             </form>
-            <a href="../../index.html"><button class="botao-voltar"> Voltar </button></a>
         </div>
-    </div>
 
-    <script src="senha.js"></script> 
+    <script src="../../../form/senha.js"></script> 
 </body>
 </html>
 

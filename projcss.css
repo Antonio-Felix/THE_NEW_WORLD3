@@ -230,6 +230,7 @@ footer{
 }
 
 .container{
+    transform: translateY(10%);
     width: 500px;
     background: rgba(0, 65, 80, 0.479);
     border: 2px solid rgba(255, 255, 255, .2);
@@ -241,14 +242,14 @@ footer{
 }
 
 .container .h1-form{
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
 }
 
 .container .caixa-input{
     position: relative;
     width: 420px;
-    height: 50px;
+    height: 40px;
     margin: 20px 0;
 }
 
@@ -306,14 +307,47 @@ footer{
     transition: .3s ease 0s, left .3s ease 0s;
 }
 
+.div-btn-menu{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.div-btn-menu .botao-menu{
+    width: 150px;
+    height: 30px;
+    background: var(--cor005);
+    border: none;
+    font-family: 'Acme', sans-serif;
+    border-radius: 40px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;  
+    transition: .3s ease 0s, left .3s ease 0s;
+}
+
+.oibibliotecario-menu{
+    margin-top: 30px;
+    width: 200px;
+    text-align: center;
+    transform: translateX(-10%);
+}
+
+.oibibliotecario-menu h2{
+    color: #fff;
+
+}
+
 .labels input:focus-visible{
     outline: 2px solid var(--cor004);
 }
 
 .logo-login{
     width: 50px;
-    height: 50px;
-    transform: translate(600%, -90%);
+    height: 20px;
+    transform: translate(700%, -50px);
 }
 
 .logo-login .logo{
@@ -419,54 +453,136 @@ div i{
 
 /*LEMBRAR DE AJEITAR HEADER */
 
-.h1-biblio{
-    text-align: center;
-    color: var(--cor003);
-    font-family: 'Acme', sans-serif;
-    font-size: 50px;
-    background-color: var(--cor004);
-}
-
-
-.main-biblio{
-    display: flex;
-    align-items: center;
+.body-menu{
+    width: 100%;
     height: 100vh;
-    padding: 30px;
+    align-items: center;
+    display: flex;
+    font-family: 'Acme', sans-serif;
+    justify-content: center;
     background-image: url("Imagens/fundo2.jpg");
-    background-size: cover; 
+    background-size: cover;
+    background-position: 70%;
     background-repeat: no-repeat;
-    background-position: center 50%;
 }
 
-.h2-biblio{
-    margin: 0 auto;
-    color: var(--cor003);
-    font-family: 'Acme', sans-serif;
-    margin-top: 80px;
-    margin-bottom: 30px;
-    border-style: dashed;
-    padding: 9px;
+.container-bibliotecario{
+    height: 370px;
+    background: var(--cor004);
+    width: 550px;
+    border-radius: 30px;
 }
 
-
-.botoes-biblio{
-    margin-top: 20px;
-    color: var(--cor004);
-    font-family: 'Acme', sans-serif;
-    font-size: 15px;
-    background-color: var(--cor003);
-    border: none;
-    border-radius: 7px;
-    padding: 5px 10px 5px 10px;
-    transition: all .30s ease-out;
+.logo-menu{
+    height: 50px;
+    width: 20px;
+    transform: translate(-250px, -90px);
 }
 
-.botoes-biblio:hover{
-    background-color: var(--cor002);
-    color: var(--cor003);
-    letter-spacing: 3px;
-    cursor: pointer;
+.lg{
+    height: 150px;
+    width: 150px;
+}
+
+.navegacao-menu{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    height: 370px;
+    width: 80px;
+    background: var(--cor005);
+    box-shadow: 10px 0 0 var(--cor004);
+    border-left: 10px solid var(--cor005);
+    overflow: hidden; /*comentar*/
+    transition: 0.7s;
+}
+
+.navegacao-menu:hover{
+    width: 200px;
+}
+
+.navegacao-menu ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navegacao-menu ul li{
+    position: relative;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navegacao-menu ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navegacao-menu ul li a .icons-menu{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.navegacao-menu ul li a .icons-menu ion-icon{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.navegacao-menu ul li a .icons-menu i{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.navegacao-menu ul li a .titulos{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navegacao-menu ul li.active{
+    background: var(--cor004);
+}
+
+.navegacao-menu ul li.active a::before{
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--cor005);
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 var(--cor004);
+}
+
+.navegacao-menu ul li.active a::after{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--cor005);
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 var(--cor004);
 }
 
 /*====================================CSS-MENSAGENS====================================*/
@@ -522,5 +638,3 @@ th{
 .mensagem-erro {
     color: white;
 }
-
-

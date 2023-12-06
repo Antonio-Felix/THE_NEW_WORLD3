@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro emprestimo</title>
+    <title>THE NEW WORLD</title>
 
     <link rel="shortcut icon" href="../../../../Imagens/world-book-day.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../../../projcss.css"> 
@@ -20,22 +20,28 @@
 
 <body class="bodies"> 
 
-        <div class="container">
-            <div class="img-form">
-                <img class="imagem" src="../../../../Imagens/para-emprestimo.png" alt="">
+    <header class="header-login">
+        <div class="container-header-login"> 
+
+            <div class="alinhar-header-login"> 
+
+                <nav class="navg-login">      
+                    <a class="link-linha" href="../../../../index.html"> HOME </a>
+                    <a class="link-linha" href="../../../../index.html"> VOLTAR </a>
+                </nav>
+
             </div>
+        </div>            
+    </header>
 
-            <legend></legend>
-                <div class="form">
-
+       <div class="container">
                     <form action="cap_emp.php" method="post">
 
-                        <div class="header-form">
-                            <div class="titulo-form">
-                                <h1>Realizar Emprestimo</h1>
-                            </div>
-                        </div>
+                    <h1 class="h1-form"> Empréstimo </h1>
 
+                        <div class="logo-login">
+                            <img class="logo" src="../../../../Imagens/world-book-day (1).png" alt="">
+                        </div>
                         <!-- Exibir mensagem de erro se existir -->
 
                 <div class="mensagem-erro">
@@ -51,27 +57,22 @@
                    ?>
                    </div>
 
-                       <div class="total-input">
-                             <div class="labels">
-                                <label for="cpfleitor"> <strong> CPF do Leitor:</strong></label>
-                                <input type="text" name="cpfleitor" placeholder="000.000.000-00" required>
+                            <div class="caixa-input">
+                                <input type="text" name="cpfleitor" placeholder="CPF do Leitor" autofocus required>
                             </div>
   
-                            <div class="labels">
-                                <label for="dataegresso"><strong> Data de egresso:</strong></label>
-                                <input type="date" name="dataegresso" autofocus required>
-                            </div>
-                            <div class="labels">
-                                <label for="codlivro" ><strong>Código do livro:</strong></label>
-                                <input type="number" name="codlivro" required>
+                            <div class="caixa-input">
+                                <input type="date" name="dataegresso" placeholder="Data de egresso" required>
                             </div>
 
-                            </div>
-                            <input class="botao-cad" type="submit" value="Cadastrar">
+                             <div class="caixa-input">
+                                <input type="number" name="codlivro" placeholder="Código do livro" required>
                             </div>
                        
+                            <div class="div-btn-login">
+                                <button type="submit" class="botao-login"> Emprestar </button>
+                             </div> 
                     </form>
-                    <a href="../index_biblio.html"><button class="botao-voltar"> Voltar </button></a>
                 </div>
         </div>
 </body>
