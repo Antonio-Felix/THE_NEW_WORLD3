@@ -13,8 +13,7 @@
     $cpffun = $_SESSION["cpffun"];
     $cpfleitor = $_POST ["cpfleitor"];
 
-    $datadevolucao = $_POST ["datadevolucao"];
-    
+    $datadevolucao = date("Y-m-d");
 
     $codsitua = 1;
     $acao = 2;
@@ -99,7 +98,7 @@
 
                         // INSERTANDO OS VALORES DA TABELA DE RELATÓRIO
                         //---------------------------------------------------
-                        $query6 = "call add_relatorio ($acao, $codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao')";
+                        $query6 = "call add_relatorio ($acao, $codlivro, $codsitua, $cpfleitor, $cpffun, '$data_e', '$datadevolucao')";
                         $result6 = mysqli_query($con, $query6);
                         //---------------------------------------------------
 

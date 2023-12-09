@@ -47,9 +47,13 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
             // SESSION PARA OS TRATAMENTOS DE ERRO DO EMPRESTIMO
             $_SESSION ['mensagem'] = ' '; // EMPRESTIMO
             $_SESSION ['mensagem2'] = ' '; // DEVOLUCAO
+            $_SESSION['mensagem9'] = ' '; // RENOVA 
             $_SESSION['mensagem5'] = ' '; // TRATAMENTO DE ERRO DO LIVRO
             $_SESSION['mensagem7'] = ' '; // TRATAMENTO DE ERRO DO LEITOR
             $_SESSION['mensagem8'] = ' '; // TRATAMENTO DE ERRO DO FUNCIONARIO
+
+            $_SESSION['mensagem10'] = ' '; // LISTAGEM HISTÓRICO DO LEITOR 
+            $_SESSION['mensagem11'] = ' '; // LISTAGEM LEITORES 
 
             header("Location:../index/fun_biblio/index_biblio.php");
             exit();

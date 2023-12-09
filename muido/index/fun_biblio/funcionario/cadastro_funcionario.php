@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="caixa-input">
-                        <input type="number" name="fone" placeholder = "Telefone" required>
+                        <input type="text" name="fone" placeholder = "Telefone" required>
                     </div>
 
                     <div class="div-btn-login">

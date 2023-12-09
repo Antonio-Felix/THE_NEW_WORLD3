@@ -61,9 +61,9 @@
                                 <input type="text" name="cpfleitor" placeholder="CPF do Leitor" autofocus required>
                             </div>
   
-                            <div class="caixa-input">
+                        <!--    <div class="caixa-input">
                                 <input type="date" name="dataegresso" placeholder="Data de egresso" required>
-                            </div>
+                            </div> -->
 
                              <div class="caixa-input">
                                 <input type="number" name="codlivro" placeholder="Código do livro" required>

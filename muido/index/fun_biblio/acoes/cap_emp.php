@@ -13,7 +13,10 @@
     $cpffun = $_SESSION["cpffun"];
     $cpfleitor = $_POST ["cpfleitor"];
 
-    $dataegresso = $_POST ["dataegresso"];
+    $dataegresso = date("Y-m-d");
+
+    $renova = 0; 
+    
     $datadevolucao = date('Y-m-d', strtotime($dataegresso . ' + 30 days'));
 
     $codsitua = 2;
@@ -61,7 +64,7 @@
                 
                 // ARMAZENANDO O EMPRÉSTIMO NO BANCO DE DADOS 
 
-                $query = "INSERT into emprestimo values($codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao')";
+                $query = "INSERT into emprestimo values($codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao', $renova)";
                 $result  = mysqli_query($con, $query);
 
                 // INSERTANDO OS VALORES DA TABELA DE RELATÓRIO

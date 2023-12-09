@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../../../../projcss.css"> 
 
     <style>
-
         .mensagem-erro {
             color: white;
         }
@@ -21,7 +20,7 @@
 
 <body class="bodies"> 
 
-<header class="header-login">
+    <header class="header-login">
         <div class="container-header-login"> 
 
             <div class="alinhar-header-login"> 
@@ -33,46 +32,46 @@
 
             </div>
         </div>            
-</header>
+    </header>
 
-        <div class="container">
+       <div class="container">
+                    <form action="cap_renova.php" method="post">
 
-                    <form action="cap_devol.php" method="post">
-
-                        <h1 class="h1-form">Devolução</h1>
+                    <h1 class="h1-form"> Renovação </h1>
 
                         <div class="logo-login">
                             <img class="logo" src="../../../../Imagens/world-book-day (1).png" alt="">
                         </div>
-                <!-- Exibir mensagem de erro se existir -->
+                        <!-- Exibir mensagem de erro se existir -->
 
                 <div class="mensagem-erro">
-                   <?php
 
-                    session_start();
-                    
-                   if (isset($_SESSION["mensagem2"])) {
+                   <?php
+                   session_start();
+                   if (isset($_SESSION["mensagem9"])) {
         
-                    echo   $_SESSION['mensagem2']; 
-                    $_SESSION['mensagem2'] = ' ';
+                    echo   $_SESSION['mensagem9']; 
+                    echo '</br>';
+                    $_SESSION['mensagem9'] = ' ';
                    }
                    ?>
+                   </div>
+
                             <div class="caixa-input">
-                                <input type="text" name="cpfleitor" placeholder="CPF do Leitor" autofocus required>
+                                <input type="number" name="cpfleitor" placeholder="CPF do Leitor" autofocus required>
                             </div>
   
-                         <!--   <div class="caixa-input">
-                                <input type="date" name="datadevolucao" placeholder="Data de devolucao" required>
-                            </div> -->
+                           <!-- <div class="caixa-input">
+                                <input type="date" name="dataegresso" placeholder="Data de egresso" required>
+                            </div>-->
 
-                            <div class="caixa-input">
+                             <div class="caixa-input">
                                 <input type="number" name="codlivro" placeholder="Código do livro" required>
                             </div>
-
-                            <div class="div-btn-login">
-                                <button type="submit" class="botao-login"> Devolver </button>
-                             </div> 
                        
+                            <div class="div-btn-login">
+                                <button type="submit" class="botao-login"> Renovar </button>
+                             </div> 
                     </form>
                 </div>
         </div>
