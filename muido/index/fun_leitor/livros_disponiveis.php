@@ -16,6 +16,20 @@ include('../../conexao.php');
 
 <body class="bodies"> 
 
+    <header class="header-login">
+            <div class="container-header-login"> 
+
+                <div class="alinhar-header-login"> 
+
+                    <nav class="navg-login">      
+                        <a class="link-linha" href="../../index.html"> HOME </a>
+                        <a class="link-linha" href="index_leitor.php"> VOLTAR </a>
+                    </nav>
+
+                </div>
+            </div>            
+    </header>
+    
     <?php
   
      $m = false; 
@@ -29,15 +43,18 @@ include('../../conexao.php');
     <div class="container-tabela">
         <legend> <h1 class="h1listas">ACERVO</h1> </legend>
         <table>
-           <tr>
-                <th>TÍTULO</th>
-                <th>CÓDIGO</th>
-                <th>AUTOR</th>
-                <th>CATEGORIA</th>
-                <th>SITUAÇÃO</th>
-           </tr>
+           <thead>
+               <tr>
+                    <th>TÍTULO</th>
+                    <th>CÓDIGO</th>
+                    <th>AUTOR</th>
+                    <th>CATEGORIA</th>
+                    <th>SITUAÇÃO</th>
+               </tr>
+           </thead>
            <?php
            while($linha = mysqli_fetch_array($result)){
+            echo "<tbody>";
                 echo "<tr>";
                     echo "<td>".$linha['title']."</td>";
                     echo "<td>".$linha['codlivro']."</td>";
@@ -45,12 +62,11 @@ include('../../conexao.php');
                     echo "<td>".$linha['categoria']."</td>";
                     echo "<td>".$linha['nome']."</td>";
                 echo "</tr>";
+            echo"</tbody>";
            }
      }
      else{
-        $_SESSION['mensagem11'] = 'Nenhum livro disponível no momento!'; 
-        echo $_SESSION['mensagem11'];
-        $_SESSION['mensagem11'] = ' ';
+        header('location: ../../captura/mserro2.html');
 
      }
            ?>

@@ -17,8 +17,7 @@
 }
 
 
-/* cabeçalho (padding preenche os elementos. 
-ex: espaça as palavras que estão dentro de um botão de sua borda )*/
+/* header index*/
 header{
     width: 100%;
     position: fixed;
@@ -113,8 +112,7 @@ p{
     font-size: 20px;
 }
 
-/*conteúdo principal 
-height: 63.5vh = altura do conteúdo*/
+/*conteúdo principal */
 main{
     display: flex;
     align-items: center;
@@ -161,9 +159,9 @@ footer{
 
 /*====================================CSS-FORMULARIOS====================================*/
 
+/*header que serve para todas as páginas*/
 .header-login{
     width: 100%;
-    position: fixed;
     padding: 50px 5%;
     font-family: 'Acme', sans-serif;
     font-size: 16px;
@@ -216,6 +214,7 @@ footer{
     width: 100%;
 }
 
+/* body dos cadastros e login */
 .bodies{
     width: 100%;
     height: 100vh;
@@ -281,6 +280,7 @@ footer{
     color: #fff;
 }
 
+/* Botão dos cadastros e do login */
 .container .div-btn-login{
     text-align: center;
 }
@@ -307,6 +307,7 @@ footer{
     transition: .3s ease 0s, left .3s ease 0s;
 }
 
+/*botões dos op*/
 .div-btn-menu{
     text-align: center;
     margin-top: 30px;
@@ -328,16 +329,10 @@ footer{
     transition: .3s ease 0s, left .3s ease 0s;
 }
 
-.oibibliotecario-menu{
-    margin-top: 30px;
-    width: 200px;
-    text-align: center;
-    transform: translateX(-10%);
-}
-
-.oibibliotecario-menu h2{
-    color: #fff;
-
+.div-btn-menu .botao-menu:hover{
+    box-shadow: 1px 3px 10px #ffffffb6;
+    letter-spacing: 1px;
+    transition: .3s ease 0s, left .3s ease 0s;
 }
 
 .labels input:focus-visible{
@@ -389,70 +384,172 @@ div i{
 
 /*====================================CSS-INDEX-LEITOR====================================*/
 
-.header-leibiblio {
-    background-color: var(--cor002);
-    padding: 20px 20px 10px 20px;
-
+/* menu por inteiro*/
+.container-leitor{
+    height: 300px;
+    background: var(--cor004);
+    width: 550px;
+    border-radius: 30px;
 }
 
-.h1-leibiblio{
+/*barra lateral*/
+.navegacao-menu-leitor{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    height: 300px;
+    width: 80px;
+    background: var(--cor005);
+    box-shadow: 10px 0 0 var(--cor004);
+    border-left: 10px solid var(--cor005);
+    overflow: hidden; /*comentar*/
+    transition: 0.7s;
+}
+
+.navegacao-menu-leitor:hover{
+    width: 200px;
+}
+
+
+.navegacao-menu-leitor ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navegacao-menu-leitor ul li{
+    position: relative;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navegacao-menu-leitor ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navegacao-menu-leitor ul li a .icons-menu{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
     text-align: center;
-    color: var(--cor004);
-    border:20px inset var(--cor003);
-        font-family: 'Acme', sans-serif;
+    line-height: 70px;
 }
 
-.main-leibiblio{
-    display: flex;
-    align-items: center;
-    height: 77.9vh;
-    padding: 30px;
-    background-image: url("Imagens/fundocss.jpg");
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center 50%;
+.navegacao-menu-leitor ul li a .icons-menu ion-icon{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
 }
 
-.container-leibiblio{
-    width: 50%;
-    height: 90vh;
-    display: flex;
-    margin: 0 auto;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
-    background-color: var(--cor004);
-    align-items: center;
-    flex-direction: column;
+.navegacao-menu-leitor ul li a .icons-menu i{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
 }
 
-.h2-leibiblio{
-    margin: 0 auto;
-    color: var(--cor003);
-    font-family: 'Acme', sans-serif;
-    margin-top: 100px;
-    margin-bottom: 40px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+.navegacao-menu-leitor ul li a .titulos{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
 }
 
-.botoes-leibiblio{
-    margin-top: 30px;
-    color: var(--cor004);
-    font-family: 'Acme', sans-serif;
-    font-size: 15px;
-    background-color: var(--cor003);
-    border: none;
-    border-radius: 7px;
-    padding: 5px 10px 5px 10px;
-    transition: all .30s ease-out;
+.navegacao-menu-leitor ul li.active{
+    background: var(--cor004);
 }
 
-.botoes-leibiblio:hover{
-    background-color: var(--cor002);
-    color: var(--cor004);
-    letter-spacing: 3px;
-    cursor: pointer;
+/* bolinha de cima*/
+.navegacao-menu-leitor ul li.active a::before{
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--cor005);
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 var(--cor004);
 }
+
+/* bolinha de baixo */
+.navegacao-menu-leitor ul li.active a::after{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--cor005);
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 var(--cor004);
+}
+
+.logo-menu-leitor{
+    height: 50px;
+    width: 20px;
+    transform: translate(-250px, -90px);
+}
+
+.lg-leitor{
+    height: 150px;
+    width: 150px;
+}
+
+/* Mensagem de bem-vindo leitor*/
+.oileitor-menu{
+    margin-top: 20px;
+    width: 200px;
+    text-align: center;
+    transform: translateX(-10%);
+}
+
+.oileitor-menu h2{
+    color: #fff;
+}
+
+/*div da imagem*/
+.logo-sobre-leitor{
+    text-align: center;
+    height: 50px;
+    width: 20px;
+    transform: translate(-200px, -90px);
+}
+
+/*tamanho da imagem*/
+.lg-sobre-leitor{
+    height: 70px;
+    width: 70px;
+}
+
+.emails{
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px, 30px;
+    width: 100px;
+    text-align: center;
+    transform: translateX(-75%);
+}
+
+.emails a{
+    font-size: 1.0em;
+    color: #fff;
+
+}
+
+ /* Reaproveitei as classes dos ícones do menu do bibliotecário*/
 
 
 /*====================================CSS-INDEX-BIBLIOTECÁRIO====================================*/
@@ -491,6 +588,18 @@ div i{
     width: 150px;
 }
 
+/* Mensagem de bem-vindo bibliotecário*/
+.oibibliotecario-menu{
+    margin-top: 30px;
+    width: 200px;
+    text-align: center;
+    transform: translateX(-10%);
+}
+
+.oibibliotecario-menu h2{
+    color: #fff;
+}
+
 /*barra lateral*/
 .navegacao-menu{
     border-top-left-radius: 20px;
@@ -508,6 +617,7 @@ div i{
 .navegacao-menu:hover{
     width: 200px;
 }
+
 
 .navegacao-menu ul{
     position: absolute;
@@ -569,6 +679,7 @@ div i{
     background: var(--cor004);
 }
 
+/* bolinha de cima*/
 .navegacao-menu ul li.active a::before{
     content: '';
     position: absolute;
@@ -581,6 +692,7 @@ div i{
     box-shadow: 15px 15px 0 var(--cor004);
 }
 
+/* bolinha de baixo */
 .navegacao-menu ul li.active a::after{
     content: '';
     position: absolute;
@@ -593,7 +705,7 @@ div i{
     box-shadow: 15px -15px 0 var(--cor004);
 }
 
-/*====================================CSS-MENSAGENS====================================*/
+/*==================================== MENSAGEM-ERRO-E-NADA-CONSTA ====================================*/
 .container-mserro{
     background: rgba(0, 65, 80, 0.479);
     border: 2px solid rgba(255, 255, 255, .2);
@@ -656,32 +768,67 @@ div i{
 /*====================================CSS-TABELAS====================================*/
 
 .container-tabela{
-    width: 50%;
-    height: 80vh;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
-    background-color: var(--cor003);
-    align-items: center;
-    flex-direction: column;
+    background: rgba(0, 65, 80, 0.479);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px; 
 }
 
-table, th,td{
-    color: var(--cor004);
-    margin-top: 20px;
-    border: 2px solid var(--cor004);
+table{
+    width: 800px;
     border-collapse: collapse;
-    background: var(--cor002);
-    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
 }
 
 th{
-    font-family: 'Acme', sans-serif;
+    text-align: left;
+}
+
+th, td{
+    padding: 20px;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+thead, th{
+    background-color: var(--cor001);  
+}
+
+tbody{
+    tr{
+        &:hover{
+            background-color: rgba(255,255,255,0.3);
+        }
+    }
+
+    td{
+        position: relative;
+        &:hover{
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -9999px;
+                bottom: -9999px;
+                background-color: rgba(255,255,255,0.2);
+                z-index: -1;
+
+            }
+        }
+    }
 }
 
 .h1listas{
-    margin-top: 60px;
-    color: var(--cor004);
+    color: #fff;
     font-family: 'Acme', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
 }
 /*====================================CSS-MENSAGEM-DE-ERR0====================================*/
 

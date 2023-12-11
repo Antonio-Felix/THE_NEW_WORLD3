@@ -9,11 +9,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> THE NEW WORLD</title>
 
-    <link rel="shortcut icon" href="../../../Imagens/world-book-day.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../../Imagens/world-book-day.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../../../projcss.css"> 
 </head>
 
 <body class="bodies"> 
+<header class="header-login">
+        <div class="container-header-login"> 
+
+            <div class="alinhar-header-login"> 
+
+                <nav class="navg-login">      
+                    <a class="link-linha" href="../../../../index.html"> HOME </a>
+                    <a class="link-linha" href="../index_biblio.php"> VOLTAR </a>
+                    <a class="link-linha" href="../../../logout.php"> LOGOUT </a>
+                </nav>
+
+            </div>
+        </div>            
+    </header> 
 
     <?php
 
@@ -50,9 +64,7 @@
            }
      }
      else{
-        $_SESSION['mensagem77'] = 'Nada consta!'; 
-        echo $_SESSION['mensagem77'];
-        $_SESSION['mensagem77'] = ' ';
+        header('location: ../../../captura/mserro.html');
 
      }
            ?>

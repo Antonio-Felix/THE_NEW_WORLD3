@@ -15,6 +15,20 @@ include('../../captura/protect2.php');
 
 <body class="bodies"> 
 
+<header class="header-login">
+        <div class="container-header-login"> 
+
+            <div class="alinhar-header-login"> 
+
+                <nav class="navg-login">      
+                    <a class="link-linha" href="../../index.html"> HOME </a>
+                    <a class="link-linha" href="index_leitor.php"> VOLTAR </a>
+                </nav>
+
+            </div>
+        </div>            
+</header>
+
     <?php
   
      include('../../conexao.php');
@@ -31,22 +45,26 @@ include('../../captura/protect2.php');
     ?>
    
     <div class="container-tabela">
-        <legend> <h1 class="h1listas">MEUS EMPRESTIMOS</h1> </legend>
+    <legend> <h1 class="h1listas"> MEUS EMPRESTIMOS </h1> </legend>
         <table>
-           <tr>
-                <th>TÍTULO</th>
-                <th>CÓDIGO</th>
-                <th>AUTOR</th>
-                <th>CATEGORIA</th>
-                <th>RETIRADA</th>
-                <th>PRAZO</th>
-                <th>RENOVAÇÕES</th>
-           </tr>
+            <thead>
+                <tr>
+                    <th>TÍTULO</th>
+                    <th>CÓDIGO</th>
+                    <th>AUTOR</th>
+                    <th>CATEGORIA</th>
+                    <th>RETIRADA</th>
+                    <th>PRAZO</th>
+                    <th>RENOVAÇÕES</th>
+                </tr>
+            </thead>
+           
            <?php
 
            $query2 = "call lista_emp_leitor($cpfleitor)";  
            $result2 = mysqli_query($con, $query2);
            while($linha = mysqli_fetch_array($result2)){
+            echo "<tbody>";
                 echo "<tr>";
                     echo "<td>".$linha['title']."</td>";
                     echo "<td>".$linha['codlivro']."</td>";
@@ -56,12 +74,12 @@ include('../../captura/protect2.php');
                     echo "<td>".$linha['data_r']."</td>";
                     echo "<td>".$linha['renova']."</td>";
                 echo "</tr>";
+            echo"</tbody>";
            }
      }
      else{
-        $_SESSION['mensagem10'] = 'Nenhum empréstimo no momento!'; 
-        echo $_SESSION['mensagem10'];
-        $_SESSION['mensagem10'] = ' ';
+        $_SESSION['merror'] = true;  
+        header('location: ../../captura/mserro2.html');
 
      }
            ?>

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../../../projcss.css">
+    <link rel="shortcut icon" href="../../../Imagens/world-book-day.png" type="image/x-icon">
 
     <title>THE NEW WORLD</title>
 </head>
@@ -70,7 +71,7 @@
                 </li>
 
                 <li class="linha-lista">
-                    <a href="listagem/historico_livro.php">
+                    <a href="listagem/op_relatorio.html">
                         <span class="icons-menu"> <ion-icon name="library-outline"></ion-icon> </span>
                         <span class="titulos"> Relatórios </span>
                     </a>

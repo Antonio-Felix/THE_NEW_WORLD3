@@ -8,7 +8,6 @@ create table situacao(
 
 insert into situacao values(1, "Disponível");
 insert into situacao values(2, "Indisponível");
-# insert into situacao values(3, "reservado");
 
 create table livro(
 	codlivro int primary key not null, 
@@ -45,7 +44,7 @@ create table leitor(
 insert into leitor values(129914934, "barbara cabral", "barbaraaraujo@gmail.com", 99615165, 12345678);
 insert into leitor values (2, "2", "2@gmail.com", 2, 2);
 
-# onde ação representa o que está fazendo: renovando, reservando, emprestando ou devolvendo
+# onde ação representa o que está fazendo: renovando, emprestando ou devolvendo
 
 create table acao(
 	codacao int primary key not null,
@@ -55,8 +54,6 @@ create table acao(
 # inserts fixos das ações 
 insert into acao values(1, "Emprestado");
 insert into acao values(2, "Devolvido");
-# insert into acao values(3, "Renovado");
-
 
 # referente a tabela de emprestimos 
 

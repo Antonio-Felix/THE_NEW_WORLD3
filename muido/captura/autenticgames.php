@@ -53,8 +53,6 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
             $_SESSION['mensagem7'] = ' '; // TRATAMENTO DE ERRO DO LEITOR
             $_SESSION['mensagem8'] = ' '; // TRATAMENTO DE ERRO DO FUNCIONARIO
 
-            $_SESSION['mensagem10'] = ' '; // LISTAGEM HISTÓRICO DO LEITOR 
-            $_SESSION['mensagem11'] = ' '; // LISTAGEM LEITORES 
 
             header("Location:../index/fun_biblio/index_biblio.php");
             exit();

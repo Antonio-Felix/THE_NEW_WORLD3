@@ -38,7 +38,7 @@ if(!isset($_SESSION['cpfleitor'])) {
             <h2> Você não está logado </h2>
     
             <div class='div-btn-erro'>
-                <a href='../../form/login.php'><button type='submit' class='botao-erro'> Ir para o login </button></a>
+                <a href='../../form/login.php'><button type='submit' class='botao-erro'> Fazer Login </button></a>
             </div> 
     
         </div>
