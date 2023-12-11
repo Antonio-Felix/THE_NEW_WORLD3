@@ -14,6 +14,7 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
     } 
     else if(strlen($_POST['senha']) == 0) { 
         if(strlen($_POST['cpf']) != 0){
+            $_SESSION["cpf"] = $_POST['cpf'];
             $_SESSION['mensagem4'] =  "Preencha o campo da senha!";
             $exiba = true;
         }

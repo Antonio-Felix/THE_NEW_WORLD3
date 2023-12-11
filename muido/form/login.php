@@ -55,11 +55,21 @@
                     $_SESSION['mensagem6'] = ' ';
                    }
                    ?>
-
-                <div class="caixa-input">
-                    <input type="text" id="cpf" name="cpf" placeholder="CPF" autofocus required>
-                    <i class='bx bxs-user-circle'></i>
-                </div>
+                <?php
+                if (isset($_SESSION['cpf']) != 0){
+                    echo '<div class="caixa-input">';
+                        echo "<input type='text' id='cpf' name='cpf' placeholder='CPF' autofocus required value='".$_SESSION['cpf'] ."'>";
+                        echo '<i class="bx bxs-user-circle"></i>';
+                    echo '</div>';
+                }
+                else{
+                    echo '<div class="caixa-input">';
+                        echo '<input type="text" id="cpf" name="cpf" placeholder="CPF" autofocus required>';
+                        echo '<i class="bx bxs-user-circle"></i>';
+                    echo '</div>';
+                }
+                ?>
+                
 
                 <div class="caixa-input">
                     <input type="password" id="password" name="senha" placeholder="Insira sua senha " autofocus>

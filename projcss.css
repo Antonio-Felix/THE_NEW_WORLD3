@@ -371,14 +371,20 @@ div i{
 
 /*--------------------------------------------*/
 .select{
+    font-family: 'Acme', sans-serif;
+    background: rgba(0, 65, 80, 0.877);
     border-radius: 7px;
     padding: 5px;
-    border: none;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, .2);
+    font-size: 16px;
+    outline: none;
+    color: #fff;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .512);
 }
 
 .select:focus-visible{
-    outline: 2px solid var(--cor004);
+    border: 2px solid #ccc;
 }
 
 /*====================================CSS-INDEX-LEITOR====================================*/
@@ -466,8 +472,9 @@ div i{
     background-repeat: no-repeat;
 }
 
+/* menu por inteiro*/
 .container-bibliotecario{
-    height: 370px;
+    height: 410px;
     background: var(--cor004);
     width: 550px;
     border-radius: 30px;
@@ -476,7 +483,7 @@ div i{
 .logo-menu{
     height: 50px;
     width: 20px;
-    transform: translate(-250px, -90px);
+    transform: translate(-250px, -130px);
 }
 
 .lg{
@@ -484,11 +491,12 @@ div i{
     width: 150px;
 }
 
+/*barra lateral*/
 .navegacao-menu{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     position: relative;
-    height: 370px;
+    height: 410px;
     width: 80px;
     background: var(--cor005);
     box-shadow: 10px 0 0 var(--cor004);
@@ -586,21 +594,63 @@ div i{
 }
 
 /*====================================CSS-MENSAGENS====================================*/
-.container-msg{
-    width: 40%;
-    height: 60vh;
-    display: flex;
-    margin: 0 auto;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .512);
-    background-color: var(--cor003);
-    align-items: center;
-    flex-direction: column;
+.container-mserro{
+    background: rgba(0, 65, 80, 0.479);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px; 
+    text-align: center;
 }
 
-.h1-msg{
-    margin-top: 100px;
-    color: var(--cor004);
+.h1-erro{
+    padding: 10px 60px;
+}
+
+.div-btn-erro{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.div-btn-erro .botao-erro{
+    width: 150px;
+    height: 30px;
+    background: var(--cor004);
+    border: none;
     font-family: 'Acme', sans-serif;
+    border-radius: 40px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;  
+    transition: .3s ease 0s, left .3s ease 0s;
+}
+
+.div-btn-erro .botao-erro:hover{
+    box-shadow: 1px 3px 10px #ffffffb6;
+    letter-spacing: 1px;
+    transition: .3s ease 0s, left .3s ease 0s;
+}
+/*----------------------------------------------*/
+
+.icon-erro{
+    position: relative;
+    display: block;
+    min-width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.icon-erro ion-icon{
+    color: var(--cor001);
+    position: relative;
+    font-size: 100px;
+    z-index: 1;
 }
 
 /*====================================CSS-TABELAS====================================*/

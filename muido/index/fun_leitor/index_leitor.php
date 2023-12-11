@@ -1,12 +1,14 @@
+<?php
+    include "../../captura/protect2.php";
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEITOR</title>
 </head>
 <body>
-    
     <h1>MENU</h1>
     <hr>
     <a href="listar_emp.php">HISTÓRICO</a> <br>

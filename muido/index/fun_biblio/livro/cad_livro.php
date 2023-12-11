@@ -82,6 +82,9 @@
                         }
                         ?>
                         </select>
+                        <br>
+                        <br>
+                    
 
                             <div class="div-btn-login">
                                 <button type="submit" class="botao-login"> Cadastrar</button>

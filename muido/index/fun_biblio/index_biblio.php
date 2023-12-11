@@ -68,6 +68,13 @@
                         <span class="titulos"> Bibliotecário </span>
                     </a>
                 </li>
+
+                <li class="linha-lista">
+                    <a href="listagem/historico_livro.php">
+                        <span class="icons-menu"> <ion-icon name="library-outline"></ion-icon> </span>
+                        <span class="titulos"> Relatórios </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
