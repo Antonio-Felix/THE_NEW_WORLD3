@@ -15,13 +15,13 @@
 
 <body class="body-menu">
 
-<header class="header-login">
+    <header class="header-login">
         <div class="container-header-login"> 
 
             <div class="alinhar-header-login"> 
 
                 <nav class="navg-login">      
-                    <a class="link-linha" href="../../index.html"> HOME </a>
+                    <a class="link-linha" href="../../../index.html"> HOME </a>
                     <a class="link-linha" href="index_leitor.php"> VOLTAR </a>
                 </nav>
 
