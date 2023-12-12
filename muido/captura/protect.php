@@ -12,7 +12,7 @@ if(!isset($_SESSION['cpffun'])) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel='stylesheet' href='../../../projcss.css'>
+        <link rel='stylesheet' href='../../../../projcss.css'>
     
         <title> THE NEW WORLD </title>
     </head>
@@ -40,7 +40,7 @@ if(!isset($_SESSION['cpffun'])) {
             <h2> Você não está logado </h2>
     
             <div class='div-btn-erro'>
-                <a href='../../form/login.php'><button type='submit' class='botao-erro'> Fazer Login </button></a>
+                <a href='../../../form/login.php'><button type='submit' class='botao-erro'> Fazer Login </button></a>
             </div> 
     
         </div>

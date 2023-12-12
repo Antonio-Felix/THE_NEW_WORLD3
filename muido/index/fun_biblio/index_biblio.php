@@ -1,5 +1,5 @@
 <?php
-    include ('../../captura/protect.php');
+    include ('protect.php');
 ?>
 
 <!DOCTYPE html>

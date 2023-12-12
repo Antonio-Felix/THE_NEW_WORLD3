@@ -21,7 +21,7 @@
                 <div class='alinhar-header-login'> 
     
                     <nav class='navg-login'>      
-                        <a class='link-linha' href='../../../index.html'> HOME </a>
+                        <a class='link-linha' href='../../index.html'> HOME </a>
                     </nav>
     
                 </div>
