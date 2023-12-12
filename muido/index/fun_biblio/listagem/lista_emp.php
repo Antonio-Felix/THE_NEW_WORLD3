@@ -31,8 +31,8 @@
     </header> 
 
     <?php
-
-     $query = "call listar_emp()";
+    $acao = 1; 
+     $query = "call listar_emp($acao)";
      $result = mysqli_query($con, $query);
      if (mysqli_num_rows($result) > 0){
        

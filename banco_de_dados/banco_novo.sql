@@ -8,6 +8,7 @@ create table situacao(
 
 insert into situacao values(1, "Disponível");
 insert into situacao values(2, "Indisponível");
+# insert into situacao values(3, "reservado");
 
 create table livro(
 	codlivro int primary key not null, 
@@ -17,9 +18,10 @@ create table livro(
     autor varchar(50) not null,
 	foreign key (codsitua) references situacao(codsitua)
 );
- insert into livro values(1, "biblia", 1, "amor", "Deus");
- insert into livro values(2, "harry potter",2 , "fantasia", "jk. holling");
- insert into livro values(3, "emma", 2, "romance", "Jane Austen");
+
+ # insert into livro values(1, "biblia", 1, "amor", "Deus");
+ # insert into livro values(2, "harry potter", 2 , "fantasia", "jk. holling");
+ # insert into livro values(3, "emma", 2, "romance", "Jane Austen");
 
 
 create table funcionario(
@@ -30,8 +32,7 @@ create table funcionario(
 	senha varchar(8) not null
 );
 
-insert into funcionario values(123, 'barbara', 'barbara@gmail.com', 123, 123); 
-insert into funcionario values (1, "1", "1@gmail.com", 1, 1);
+insert into funcionario values(1234, 'root', 'root@gmail.com', 1234, 1234); 
 
 create table leitor(
 	cpfleitor int(11) primary key not null, 
@@ -41,10 +42,10 @@ create table leitor(
     senha varchar(8) not null
 );
 
-insert into leitor values(129914934, "barbara cabral", "barbaraaraujo@gmail.com", 99615165, 12345678);
-insert into leitor values (2, "2", "2@gmail.com", 2, 2);
+# insert into leitor values(129914934, "barbara cabral", "barbaraaraujo@gmail.com", 99615165, 12345678);
+# insert into leitor values (2, "2", "2@gmail.com", 2, 2);
 
-# onde ação representa o que está fazendo: renovando, emprestando ou devolvendo
+# onde ação representa o que está fazendo: renovando, reservando, emprestando ou devolvendo
 
 create table acao(
 	codacao int primary key not null,
@@ -54,6 +55,8 @@ create table acao(
 # inserts fixos das ações 
 insert into acao values(1, "Emprestado");
 insert into acao values(2, "Devolvido");
+# insert into acao values(3, "Renovado");
+
 
 # referente a tabela de emprestimos 
 
@@ -105,6 +108,7 @@ create table relatorio(
 		cpffun int not null, 
 		data_e date not null, 
 		data_d date not null, 
+        renova int,
 		foreign key (cpfleitor) references leitor(cpfleitor),
 		foreign key (codlivro) references livro(codlivro),
 		foreign key (cpffun) references funcionario(cpffun),
@@ -239,15 +243,20 @@ end;
 
 
 #PROCEDIMENTO PARA LISTAR OS EMPRÉSTIMOS 
+
+# COLOCAR PARA VERIFICAR A RENOVAÇÃO,SENDO QUE SERÁ INSERIDA NULA 
+# TESTAR A AÇÃO TAMBÉM 
+
 DELIMITER |
-create procedure listar_emp()
+create procedure listar_emp(acao int(1))
 
 begin
 
 SELECT r.*, e.renova, l.nome as nomelei, li.*
 	from relatorio r, emprestimo e, leitor l, livro li
-	where e.codlivro = r.codlivro
-    and l.cpfleitor = e.cpfleitor
+	where acao = r.acao
+    and  e.codlivro = r.codlivro
+    and l.cpfleitor = e.cpfleitor 
     and li.codlivro = r.codlivro;
 
 end;
@@ -268,8 +277,10 @@ SELECT d.*, l.nome as nomelei, li.title
 end;
 |
 
-
 #PROCEDIMENTO PARA VER O RELÁTORIO DE DETERMINADO DIA
+
+
+
 
 # select * from emprestimo;
 
