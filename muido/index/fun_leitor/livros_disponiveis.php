@@ -66,7 +66,7 @@ include('../../conexao.php');
            }
      }
      else{
-        header('location: ../../captura/mserro2.html');
+        header('location: ../../captura/mserro2.php');
 
      }
            ?>

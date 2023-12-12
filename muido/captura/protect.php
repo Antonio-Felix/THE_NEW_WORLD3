@@ -3,14 +3,15 @@ if(!isset($_SESSION)) {
     session_start();
 }
 if(!isset($_SESSION['cpffun'])) {
-    echo "<!DOCTYPE html>
+    
+    ?>
+    <!DOCTYPE html>
     <html lang='pt-br'>
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel='shortcut icon' href='../../Imagens/world-book-day.png' type='image/x-icon'>
         <link rel='stylesheet' href='../../../projcss.css'>
     
         <title> THE NEW WORLD </title>
@@ -44,10 +45,18 @@ if(!isset($_SESSION['cpffun'])) {
     
         </div>
             
+
+
+
         <script type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
         <script nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script>
+
+
+
+
     </body>
-    </html>";
-    exit();
+    </html>
+    <?php
+    exit();    
 }
 ?>

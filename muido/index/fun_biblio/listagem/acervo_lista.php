@@ -1,6 +1,6 @@
 <?php
-//include('../../captura/protect2.php');
-include('../../../conexao.php');
+    include ('../../../captura/protect.php');
+    include('../../../conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,7 +52,7 @@ include('../../../conexao.php');
            <?php
            while($linha = mysqli_fetch_array($result)){
                 echo "<tr>";
-                    echo "<td> <a href='historico_livro.php?op=" . $linha['codlivro'] . "'>" . $linha['title'] . " </a></td>" ;
+                    echo "<td> <a class='link-tabela' href='historico_livro.php?op=" . $linha['codlivro'] . "'>" . $linha['title'] . " </a></td>" ;
                     //echo "<td>".$linha['title']."</td>";
                     echo "<td>".$linha['codlivro']."</td>";
                     echo "<td>".$linha['autor']."</td>";
@@ -62,7 +62,7 @@ include('../../../conexao.php');
            }
      }
      else{
-        header('location: ../../../captura/mserro.html');
+        header('location: ../../../captura/mserro.php');
 
      }
            ?>

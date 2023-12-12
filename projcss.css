@@ -830,6 +830,24 @@ tbody{
     text-align: center;
     margin-bottom: 20px;
 }
+
+.link-tabela{
+    text-decoration: none;
+    cursor: pointer;
+    padding: 7px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: var(--cor004);
+    transition: all .30s ease-out;
+}
+
+.link-tabela:hover{
+    box-shadow: 1px 1px 6px #ffffffb6;
+    background-color: var(--cor002);
+    color: #fff;
+    transition: .3s ease 0s, left .3s ease 0s;
+}
+
 /*====================================CSS-MENSAGEM-DE-ERR0====================================*/
 
 .mensagem-erro {

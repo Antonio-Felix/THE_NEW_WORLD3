@@ -1,6 +1,7 @@
 <?php
 include '../../../classes/funcionario.php';
 include('../../../conexao.php');
+include ('../../../captura/protect.php');
 
 session_start();
 

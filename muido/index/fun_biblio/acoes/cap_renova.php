@@ -1,6 +1,8 @@
 <?php
 
     session_start(); 
+    
+    include ('../../../captura/protect.php');
 
     include('../../../conexao.php');
 

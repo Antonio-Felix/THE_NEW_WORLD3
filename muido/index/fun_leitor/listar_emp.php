@@ -79,7 +79,7 @@ include('../../captura/protect2.php');
      }
      else{
         $_SESSION['merror'] = true;  
-        header('location: ../../captura/mserro2.html');
+        header('location: ../../captura/mserro2.php');
 
      }
            ?>

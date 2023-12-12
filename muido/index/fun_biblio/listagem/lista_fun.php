@@ -1,5 +1,5 @@
 <?php
-//include('../../captura/protect2.php');
+ include ('../../../captura/protect.php');
 include('../../../conexao.php');
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ include('../../../conexao.php');
 
            }
      else{
-        header('location: ../../../captura/mserro.html');
+        header('location: ../../../captura/mserro.php');
 
      }
            ?>

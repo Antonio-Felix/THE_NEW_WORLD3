@@ -1,5 +1,6 @@
 <?php
     include('../../../conexao.php');
+    include ('../../../captura/protect.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -64,7 +65,7 @@
            }
      }
      else{
-        header('location: ../../../captura/mserro.html');
+        header('location: ../../../captura/mserro.php');
 
      }
            ?>

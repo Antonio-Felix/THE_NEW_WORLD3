@@ -43,35 +43,35 @@
                 </li>
 
                 <li class="linha-lista">
-                    <a href="leitores/op_leitores.html">
+                    <a href="leitores/op_leitores.php">
                         <span class="icons-menu"><ion-icon name="people-outline"></ion-icon> </span>
                         <span class="titulos"> Leitores </span>
                     </a>
                 </li>
 
                 <li class="linha-lista">
-                    <a href="livro/op_livro.html">
+                    <a href="livro/op_livro.php">
                         <span class="icons-menu"> <ion-icon name="book-outline"></ion-icon> </span>
                         <span class="titulos"> Livros </span>
                     </a>
                 </li>
  
                 <li class="linha-lista">
-                    <a href="acoes/op_acoes.html">
+                    <a href="acoes/op_acoes.php">
                         <span class="icons-menu"> <ion-icon name="settings-outline"></ion-icon> </span>
                         <span class="titulos"> Ações </span>
                     </a>
                 </li>
 
                 <li class="linha-lista">
-                    <a href="funcionario/op_fun.html">
+                    <a href="funcionario/op_fun.php">
                         <span class="icons-menu"> <ion-icon name="glasses-outline"></ion-icon> </span>
                         <span class="titulos"> Bibliotecário </span>
                     </a>
                 </li>
 
                 <li class="linha-lista">
-                    <a href="listagem/op_relatorio.html">
+                    <a href="listagem/op_relatorio.php">
                         <span class="icons-menu"> <ion-icon name="library-outline"></ion-icon> </span>
                         <span class="titulos"> Relatórios </span>
                     </a>

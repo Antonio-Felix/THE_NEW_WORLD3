@@ -1,5 +1,5 @@
 <?php
-//include('../../captura/protect2.php');
+ include ('../../../captura/protect.php');
 include('../../../conexao.php');
 ?>
 <!DOCTYPE html>
@@ -48,10 +48,10 @@ include('../../../conexao.php');
                 <th>E-MAIL</th>
                 <th>TELEFONE</th>
            </tr>
-           <?php
-           while($linha = mysqli_fetch_array($result)){
+        <?php
+            while($linha = mysqli_fetch_array($result)){
                 echo "<tr>";
-                    echo "<td> <a href='emp_leitor.php?op=" . $linha['cpfleitor'] . "'>" . $linha['nome'] . " </a></td>" ;
+                    echo "<td> <a class='link-tabela' href='emp_leitor.php?op=" . $linha['cpfleitor'] . "'>" . $linha['nome'] . " </a></td>" ;
                     echo "<td>".$linha['cpfleitor']."</td>";
                     echo "<td>".$linha['email']."</td>";
                     echo "<td>".$linha['fone']."</td>";
@@ -61,11 +61,11 @@ include('../../../conexao.php');
                 }
 
            }
-     else{
-        header('location: ../../../captura/mserro.html');
+            else{
+                header('location: ../../../captura/mserro.php');
 
-     }
-           ?>
+            }
+        ?>
         </table>
     </div>
 </body>

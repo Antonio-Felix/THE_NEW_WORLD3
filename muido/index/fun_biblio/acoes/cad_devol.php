@@ -1,3 +1,6 @@
+<?php
+    include ('../../../captura/protect.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -49,7 +52,7 @@
                 <div class="mensagem-erro">
                    <?php
 
-                    session_start();
+                    //session_start();
                     
                    if (isset($_SESSION["mensagem2"])) {
         
