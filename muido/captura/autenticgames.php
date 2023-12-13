@@ -58,6 +58,7 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
             exit();
         }
         else{
+            $_SESSION["cpf"] = $_POST['cpf'];
             $_SESSION['mensagem6'] =  "Seu CPF ou senha está errado!";
             $exiba = true;
         }

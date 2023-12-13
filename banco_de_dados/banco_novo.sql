@@ -42,7 +42,7 @@ create table leitor(
     senha varchar(8) not null
 );
 
-# insert into leitor values(129914934, "barbara cabral", "barbaraaraujo@gmail.com", 99615165, 12345678);
+# insert into leitor values(129, "barbara cabral", "barbaraaraujo@gmail.com", 12345, 12345678);
 # insert into leitor values (2, "2", "2@gmail.com", 2, 2);
 
 # onde ação representa o que está fazendo: renovando, reservando, emprestando ou devolvendo
