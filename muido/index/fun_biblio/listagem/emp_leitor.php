@@ -1,6 +1,6 @@
 <?php
     include('../../../conexao.php');
-    include ('../../../../captura/protect.php');
+    include ('../../../captura/protect.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
