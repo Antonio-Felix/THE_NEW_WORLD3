@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> THE NEW WORLD</title>
+    <title> THE NEW WORLD </title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
-    <link rel="shortcut icon" href="../../Imagens/world-book-day.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../../Imagens/world-book-day.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../../../projcss.css">
 </head>
 
@@ -32,35 +32,34 @@
 
     <div class="container">
 
-            <form action="cap_leitor.php" method = "post">
-
-                <h1 class="h1-form" > Cadastrar Leitor </h1>
+            <form action="cap_cad_funcionario.php" method = "post">
+            
+                <h1 class="h1-form"> Cadastrar Funcionário </h1>
 
                 <div class="logo-login">
                     <img class="logo" src="../../../../Imagens/world-book-day (1).png" alt="">
                 </div>
 
-                <div class="mensagem-erro">
+                 <!-- Exibir mensagem de erro se existir -->
+
+                 <div class="mensagem-erro">
 
                     <?php
                     //session_start();
-
-                    if (isset($_SESSION["mensagem7"])) {
-                    echo   $_SESSION['mensagem7']; 
-                    $_SESSION['mensagem7'] = ' ';
+                    if (isset($_SESSION["mensagem8"])) {
+                    echo   $_SESSION['mensagem8']; 
+                    $_SESSION['mensagem8'] = ' ';
                     }
-            
                     ?>
 
                 </div>
 
                     <div class="caixa-input">
-                        <input type="text" name="nome" placeholder = "Nome" autofocus required>
+                        <input type="text" name="nome" placeholder = "Nome" required>
                     </div>
                     
-
                     <div class="caixa-input">
-                        <input type="number" name="cpfleitor" id="cpffun" placeholder="CPF" required>
+                        <input type="number" name="cpffun" id="cpffun" autofocus placeholder="CPF" required>
                     </div>
 
                     <div class="caixa-input">
@@ -73,16 +72,16 @@
                     </div>
 
                     <div class="caixa-input">
-                        <input type="number" name="fone" placeholder = "Telefone" required>
+                        <input type="text" name="fone" placeholder = "Telefone" required>
                     </div>
-    
 
                     <div class="div-btn-login">
                         <button type="submit" class="botao-login"> Cadastrar </button>
                     </div> 
-            
+                    
             </form>
         </div>
+    </div>
 
     <script src="../../../form/senha.js"></script> 
 </body>

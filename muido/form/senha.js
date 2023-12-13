@@ -1,5 +1,5 @@
 function mostrarSenha(){
-    var inputPass = document.getElementById('senha')
+    var inputPass = document.getElementById('password')
     var btnPass = document.getElementById('btnSenha')
 
     /*se o tipo da variável inputPass for identico a pass word...*/

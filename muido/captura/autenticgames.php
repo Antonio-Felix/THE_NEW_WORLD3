@@ -1,12 +1,23 @@
 <?php
 include('../../muido/conexao.php');
-
+    session_start();
+    $exiba = false;
+    $_SESSION['exiba'] = $exiba; 
+    $_SESSION['mensagem3'] = ' ';
+    $_SESSION['mensagem4'] = ' ';
+    $_SESSION['mensagem6'] = ' ';
 if(isset($_POST['cpf']) || isset($_POST['senha'])) {
 
     if(strlen($_POST['cpf']) == 0) {
-        echo "Preencha o campo do cpf";
-    } else if(strlen($_POST['senha']) == 0) {
-        echo "Preencha o campo da senha";
+        $_SESSION['mensagem3'] =  "Preencha o campo do CPF!";
+        $exiba = true;  
+    } 
+    else if(strlen($_POST['senha']) == 0) { 
+        if(strlen($_POST['cpf']) != 0){
+            $_SESSION["cpf"] = $_POST['cpf'];
+            $_SESSION['mensagem4'] =  "Preencha o campo da senha!";
+            $exiba = true;
+        }
     } else {
 
         $cpf = $con->real_escape_string($_POST['cpf']);
@@ -20,7 +31,6 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
         $sql_code2 = "SELECT * FROM leitor WHERE cpfleitor = '$cpf' AND senha = '$senha'";
         $sql_query2 = $con->query($sql_code2) or die("Falha na execução do código SQL: " . $con -> error);
         echo $quantidade1 = $sql_query2->num_rows;
-
         if ($quantidade1 == 1){
             session_start();
             $usuario = $sql_query2->fetch_assoc();
@@ -34,12 +44,26 @@ if(isset($_POST['cpf']) || isset($_POST['senha'])) {
             $usuario = $sql_query->fetch_assoc();
             $_SESSION['cpffun'] = $usuario['cpffun'];
             $_SESSION['nome'] = $usuario['nome'];
+            
+            // SESSION PARA OS TRATAMENTOS DE ERRO DO EMPRESTIMO
+            $_SESSION ['mensagem'] = ' '; // EMPRESTIMO
+            $_SESSION ['mensagem2'] = ' '; // DEVOLUCAO
+            $_SESSION['mensagem9'] = ' '; // RENOVA 
+            $_SESSION['mensagem5'] = ' '; // TRATAMENTO DE ERRO DO LIVRO
+            $_SESSION['mensagem7'] = ' '; // TRATAMENTO DE ERRO DO LEITOR
+            $_SESSION['mensagem8'] = ' '; // TRATAMENTO DE ERRO DO FUNCIONARIO
+
+
             header("Location:../index/fun_biblio/index_biblio.php");
             exit();
-        } 
-        else {
-            echo "Falha ao logar! E-mail ou senha incorretos";
         }
-
+        else{
+            $_SESSION['mensagem6'] =  "Seu CPF ou senha está errado!";
+            $exiba = true;
+        }
+        
     }
+    if ($exiba){
+            header("location:../../muido/form/login.php");
+        }
  }

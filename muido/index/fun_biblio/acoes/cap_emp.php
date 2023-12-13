@@ -1,8 +1,10 @@
 <?php
-
+   
     session_start(); 
     
-    include '../../../conexao.php';
+    include ('../../../captura/protect.php');
+
+    include('../../../conexao.php');
 
     include '../../../classes/livro.php'; 
 
@@ -13,10 +15,14 @@
     $cpffun = $_SESSION["cpffun"];
     $cpfleitor = $_POST ["cpfleitor"];
 
-    $dataegresso = $_POST ["dataegresso"];
+    $dataegresso = date("Y-m-d");
+
+    $renova = 0; 
+    
     $datadevolucao = date('Y-m-d', strtotime($dataegresso . ' + 30 days'));
 
     $codsitua = 2;
+    $acao = 1;
 
     // ARMAZENANDO OS VALORES DO POST NA SESSION 
     $_SESSION['cpfleitor'] = $cpfleitor;
@@ -26,10 +32,10 @@
 
     // INICIALIZANDO AS VARÍAVEIS DE CONTROLE: 
 
-    $mensagem = ' '; 
     $exibir = false;
     $_SESSION['exibir'] = $exibir; 
-
+    $_SESSION['mensagem'] = ' ';
+    
    // (1° VÁLIDAÇÃO - CODIGO) conferindo de o codigo do livro existe (SE O CÓDIGO ESTÁ CORRETO)
 
      $query2 = "SELECT codlivro FROM livro WHERE codlivro = '$codlivro'";
@@ -51,15 +57,33 @@
             $query4 = "SELECT cpfleitor from leitor where cpfleitor = '$cpfleitor'";
             $result4 = mysqli_query($con, $query4);
             if ($result4->num_rows > 0){
-                
-                // FAZENDO O UPDATE DA SITUACAO DO LIVRO 
 
+                // FAZENDO UPDATE DA SITUACAO NO BANCO DE DADOS 
+
+                $query5 = "call set_situa($codsitua, $codlivro)";
+                $result5 = mysqli_query($con, $query5);
+
+                
                 // ARMAZENANDO O EMPRÉSTIMO NO BANCO DE DADOS 
 
+                $query = "INSERT into emprestimo values($codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao', $renova)";
+                $result  = mysqli_query($con, $query);
 
-              // OBS: CONCERTAR A MENSAGEM DE SUCESSO!!!!  
-                $_SESSION['mensagem'] =  "livro cadastrado!";
-                $exibir = true;  
+                // INSERTANDO OS VALORES DA TABELA DE RELATÓRIO
+
+                $query6 = "call add_relatorio ($acao, $codlivro, $codsitua, $cpfleitor, $cpffun, '$dataegresso', '$datadevolucao')";
+                $result6 = mysqli_query($con, $query6);
+
+                if($result and $result5 and $result6){
+                  // OBS: CONCERTAR A MENSAGEM DE SUCESSO!!!!  
+                        $_SESSION['mensagem'] =  "Emprestimo realizado!";
+                        $exibir = true;  
+                }
+                else{
+                    // COLOCAR O ALERT DE ANTÔNIO
+                    $_SESSION['mensagem'] =  "algo deu errado!";
+                }
+
             }
             else {
                 $exibir = true;
@@ -81,29 +105,6 @@
     if ($exibir){
         header("location:cad_emp.php");
     }
-
-   // function emprestimo($codsit
-     /*função emprestimo
-    public function emprestimo($cod){
-        if($cod == 1){
-            $this->setSituacao($cod); 
-        }
-        else{
-           $ctrl = false; 
-        }
-    }
-*/
-
-/* /*função emprestimo
-    public function emprestimo($cod){
-        if($cod == 1){
-            $this->setSituacao($cod); 
-        }
-        else{
-           $ctrl = false; 
-        }
-    } */
-
 
 ?>
  

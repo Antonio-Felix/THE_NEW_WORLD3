@@ -1,7 +1,8 @@
 <?php
-    include ('../../../captura/protect.php');
-?>
+  
+  include ('../../../captura/protect.php');
 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,9 +40,9 @@
     </header>
 
        <div class="container">
-                    <form action="cap_emp.php" method="post">
+                    <form action="cap_renova.php" method="post">
 
-                    <h1 class="h1-form"> Empréstimo </h1>
+                    <h1 class="h1-form"> Renovação </h1>
 
                         <div class="logo-login">
                             <img class="logo" src="../../../../Imagens/world-book-day (1).png" alt="">
@@ -52,29 +53,29 @@
 
                    <?php
                    //session_start();
-                   if (isset($_SESSION["mensagem"])) {
+                   if (isset($_SESSION["mensagem9"])) {
         
-                    echo   $_SESSION['mensagem']; 
+                    echo   $_SESSION['mensagem9']; 
                     echo '</br>';
-                    $_SESSION['mensagem'] = ' ';
+                    $_SESSION['mensagem9'] = ' ';
                    }
                    ?>
                    </div>
 
                             <div class="caixa-input">
-                                <input type="text" name="cpfleitor" placeholder="CPF do Leitor" autofocus required>
+                                <input type="number" name="cpfleitor" placeholder="CPF do Leitor" autofocus required>
                             </div>
   
-                        <!--    <div class="caixa-input">
+                           <!-- <div class="caixa-input">
                                 <input type="date" name="dataegresso" placeholder="Data de egresso" required>
-                            </div> -->
+                            </div>-->
 
                              <div class="caixa-input">
                                 <input type="number" name="codlivro" placeholder="Código do livro" required>
                             </div>
                        
                             <div class="div-btn-login">
-                                <button type="submit" class="botao-login"> Emprestar </button>
+                                <button type="submit" class="botao-login"> Renovar </button>
                              </div> 
                     </form>
                 </div>
